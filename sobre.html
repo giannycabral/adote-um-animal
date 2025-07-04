@@ -5,66 +5,202 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Landing Page</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sobre Nós - Pet Love</title>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <div class="logo">
+                <i class="fa-solid fa-paw logo-icon"></i>
+                <a href="index.html">Pet Love</a>
+            </div>
+            
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-    <nav>
-
-        <div class="logo">
-            <a href="index.html">Pet Love</a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-images"></i> Adoção</a></li>
+                <li><a href="contato.html"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+            </ul>
         </div>
-
-        <ul>
-            <li> <a href="index.html"> Home </a> </li>
-            <li> <a href="sobre.html"> Sobre </a> </li>
-            <li> <a href="galeria.html"> Fotos </a> </li>
-            <li> <a href="contato.html"> Contato </a> </li>
-        </ul>
-
     </nav>
 
-    <main id="main">
-        <h1 id="titulo">Quem Somos </h1>
+    <!-- Título da Página -->
+    <div style="height: 80px;"></div>
 
-        <figure id="img-div">
-            <img id="img" src="assets/img/petlove.jpg" alt="Cachorros ao ar livre">
-            <figcaption id="img-caption">Cachorros brincando ao ar livre - Petlove</figcaption>
-        </figure>
+    <!-- Sobre Section -->
+    <section class="sobre-section">
+        <div class="container">
+            <div class="sobre-container">
+                <div class="sobre-imagem">
+                    <img src="assets/img/petlove.jpg" alt="Cachorros brincando ao ar livre - Petlove">
+                </div>
+                <div class="sobre-conteudo">
+                    <h2 class="sobre-title">Quem Somos</h2>
+                    <p class="sobre-texto">
+                        A ONG Pet Love foi fundada em Outubro de 2010. Somos um grupo de pessoas que tem como objetivo cuidar dos animais abandonados e maltratados e dar a chance deles terem um novo lar onde serão bem tratados e felizes.
+                    </p>
+                    
+                    <h3><i class="fa-solid fa-bullseye"></i> Nossa Missão</h3>
+                    <p class="sobre-texto">
+                        A nossa missão é resgatar os animais abandonados, agir contra os maustratos e lhe dar todos os cuidados precisos. Conscientizar as pessoas de suas necessidades e cuidados, dando-lhe informações sobre o bem estar do animal.
+                    </p>
+                    
+                    <h3><i class="fa-solid fa-eye"></i> Nossa Visão</h3>
+                    <p class="sobre-texto">
+                        Ser uma ONG reconhecida pela comunidade como uma instituição que se compromete com a construção de um mundo melhor para os animais abandonados e ser um exemplo para as demais ONG's de proteção animal.
+                    </p>
+                    
+                    <h3><i class="fa-solid fa-heart"></i> Nossos Valores</h3>
+                    <ul class="valores-lista">
+                        <li class="valores-item">
+                            <i class="fa-solid fa-circle-check valores-icon"></i>
+                            Respeito, amor e cuidado, tratamento digno e justo aos animais
+                        </li>
+                        <li class="valores-item">
+                            <i class="fa-solid fa-circle-check valores-icon"></i>
+                            Repudio a violência ou qualquer forma de crueldade aos animais
+                        </li>
+                        <li class="valores-item">
+                            <i class="fa-solid fa-circle-check valores-icon"></i>
+                            Responsabilidade Social
+                        </li>
+                        <li class="valores-item">
+                            <i class="fa-solid fa-circle-check valores-icon"></i>
+                            Trabalhar com ética, honestidade e respeito com voluntários, mantenedores e afins
+                        </li>
+                        <li class="valores-item">
+                            <i class="fa-solid fa-circle-check valores-icon"></i>
+                            Compromisso, dedicação e atenção
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h3 id="h3">ONG Pet Love nossa história: </h3>
-            <p>A ONG Pet Love foi fundada em Outubro de
-                2010.Somos um grupo de pessoas que tem como objetivo cuidar dos animais abandonados e maltratados e dar
-                a chance deles terem um novo lar onde serão bem tratados e felizes. <strong>MISSÃO:</strong> A nossa
-                missão é resgatar os animais abandonados, agir contra os maustratos e lhe dar todos os cuidados
-                precisos. Conscientizar as pessoas de suas necessidades e cuidados, dando-lhe informações sobre o bem
-                estar do animal.
-                <strong>VISÃO:</strong> Ser uma ONG reconhecida pela comunidade como uma instituição que se compromete
-                com a construção de um mundo melhor para os animais abandonados e ser um exemplo para as demais ONG’s de
-                proteção animal.
+    <!-- Equipe Section -->
+    <section class="equipe-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-titulo">Nossa Equipe</h2>
+                <p class="section-subtitulo">Conheça as pessoas dedicadas que fazem a diferença na vida dos animais todos os dias.</p>
+            </div>
+            
+            <div class="equipe-grid">
+                <div class="equipe-membro">
+                    <div class="equipe-foto">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Membro da equipe">
+                    </div>
+                    <h3 class="equipe-nome">Ana Souza</h3>
+                    <p class="equipe-cargo">Fundadora e Coordenadora</p>
+                    <p class="equipe-bio">Veterinária apaixonada por animais, dedica sua vida ao resgate e reabilitação.</p>
+                    <div class="equipe-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="equipe-membro">
+                    <div class="equipe-foto">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Membro da equipe">
+                    </div>
+                    <h3 class="equipe-nome">Carlos Mendes</h3>
+                    <p class="equipe-cargo">Veterinário Chefe</p>
+                    <p class="equipe-bio">Especialista em cirurgias de emergência e cuidados intensivos para animais resgatados.</p>
+                    <div class="equipe-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="equipe-membro">
+                    <div class="equipe-foto">
+                        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Membro da equipe">
+                    </div>
+                    <h3 class="equipe-nome">Juliana Lima</h3>
+                    <p class="equipe-cargo">Coordenadora de Adoções</p>
+                    <p class="equipe-bio">Especialista em encontrar o match perfeito entre animais e suas novas famílias.</p>
+                    <div class="equipe-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="equipe-membro">
+                    <div class="equipe-foto">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Membro da equipe">
+                    </div>
+                    <h3 class="equipe-nome">Roberto Alves</h3>
+                    <p class="equipe-cargo">Gestor de Voluntários</p>
+                    <p class="equipe-bio">Organiza as atividades dos voluntários e gerencia eventos de arrecadação.</p>
+                    <div class="equipe-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <strong>VALORES:</strong>
-                - Respeito, amor e cuidado, tratamento digno e justo aos animais;
-                - Repudio a violência ou qualquer forma de crueldade aos animais;
-                - Responsabilidade Social;
-                - Trabalhar com ética, honestidade e respeito com voluntários, mantenedores e afins;
-                - Compromisso, dedicação e atenção.
-            </p>
-
-        </section>
-
-    </main>
-
+    <!-- Footer -->
     <footer class="footer">
-        <span class="footer__texto">
-            Feito com
-            <img class="icone icone--texto" alt="amor" src="assets/img/coracao.svg">
-            por Regiane Cabral
-        </span>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-coluna">
+                    <h3 class="footer-titulo">Pet Love</h3>
+                    <p>Somos uma organização dedicada a encontrar lares amorosos para animais abandonados, promovendo o bem-estar animal e a adoção responsável.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-coluna">
+                    <h3 class="footer-titulo">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="galeria.html">Adoção</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Doe Agora</a></li>
+                    </ul>
+                </div>
+                <div class="footer-coluna">
+                    <h3 class="footer-titulo">Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot"></i> Av. Principal, 123</li>
+                        <li><i class="fa-solid fa-phone"></i> +55 1023 567</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact.petlove@ong.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2025 Pet Love - Todos os direitos reservados | Feito com 
+                    <img class="icone icone--texto" alt="amor" src="assets/img/coracao.svg">
+                    por Regiane Cabral
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

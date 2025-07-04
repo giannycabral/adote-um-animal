@@ -5,47 +5,190 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Landing Page</title>
+  <link rel="stylesheet" href="modern-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Adoção - Pet Love</title>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+      <div class="navbar-container container">
+          <div class="logo">
+              <i class="fa-solid fa-paw logo-icon"></i>
+              <a href="index.html">Pet Love</a>
+          </div>
+          
+          <div class="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
 
-  <nav>
-
-    <div class="logo">
-      <a href="index.html">Pet Love</a>
-    </div>
-
-    <ul>
-      <li> <a href="index.html"> Home </a> </li>
-      <li> <a href="sobre.html"> Sobre </a> </li>
-      <li> <a href="galeria.html"> Fotos </a> </li>
-      <li> <a href="contato.html"> Contato </a> </li>
-    </ul>
-
+          <ul class="nav-links">
+              <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre</a></li>
+              <li><a href="galeria.html"><i class="fa-solid fa-images"></i> Adoção</a></li>
+              <li><a href="contato.html"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+          </ul>
+      </div>
   </nav>
 
+  <!-- Título da Página -->
+  <div style="height: 80px;"></div>
 
-  <main id="main">
-    <h3 id="h3">Aqui você encontra nossa galeria de Adoção </h3>
-    <div class="galeria">
-      <img src="assets/img/foto1.jpg" alt="Dois gatinhos filhotes ">
-      <img src="assets/img/foto2.jpg" alt="Um cachorrinho com a lingua de fora">
-      <img src="assets/img/foto3.jpg" alt="Um gatinho ">
-      <img src="assets/img/foto4.jpg" alt="Foto de três cachorros">
-      <img src="assets/img/foto5.jpg" alt="Dois coelhos fofos">
-      <img src="assets/img/foto6.jpg" alt="Quatro gatinhos filhotes">
+  <!-- Seção de Galeria -->
+  <section class="galeria-section">
+    <div class="galeria-header">
+      <h2 class="galeria-titulo">Nossos Animais para Adoção</h2>
+      <p class="galeria-subtitulo">Conheça os amiguinhos que estão esperando um lar cheio de amor e carinho. Todos estão vacinados e prontos para uma nova vida!</p>
     </div>
-  </main>
+    
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="assets/img/foto1.jpg" alt="Dois gatinhos filhotes">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Luna e Sol</h3>
+          <p class="galeria-animal-info">2 meses • Fêmeas • Vacinadas</p>
+          <a href="#" class="galeria-btn">Quero Adotar</a>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="assets/img/foto2.jpg" alt="Um cachorrinho com a lingua de fora">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Thor</h3>
+          <p class="galeria-animal-info">1 ano • Macho • Vacinado</p>
+          <a href="#" class="galeria-btn">Quero Adotar</a>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="assets/img/foto3.jpg" alt="Um gatinho">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Simba</h3>
+          <p class="galeria-animal-info">6 meses • Macho • Castrado</p>
+          <a href="#" class="galeria-btn">Quero Adotar</a>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="assets/img/foto4.jpg" alt="Foto de três cachorros">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Irmãos Travessos</h3>
+          <p class="galeria-animal-info">4 meses • Três irmãos</p>
+          <a href="#" class="galeria-btn">Quero Adotar</a>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="assets/img/foto5.jpg" alt="Dois coelhos fofos">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Cenoura e Alfafa</h3>
+          <p class="galeria-animal-info">1 ano • Casal • Vacinados</p>
+          <a href="#" class="galeria-btn">Quero Adotar</a>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="assets/img/foto6.jpg" alt="Quatro gatinhos filhotes">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Quarteto Fantástico</h3>
+          <p class="galeria-animal-info">2 meses • Filhotes</p>
+          <a href="#" class="galeria-btn">Quero Adotar</a>
+        </div>
+      </div>
+    </div>
+    
+    <button class="btn btn-ver-mais">Ver Mais Animais</button>
+  </section>
 
+  <!-- Seção Como Funciona -->
+  <section class="como-funciona-section">
+    <div class="container">
+      <h2 class="section-titulo">Como Funciona a Adoção?</h2>
+      
+      <div class="processo-grid">
+        <div class="processo-item">
+          <div class="processo-icone">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <h3 class="processo-titulo">1. Escolha um Animal</h3>
+          <p class="processo-texto">Navegue pela nossa galeria e encontre um amiguinho que combine com você.</p>
+        </div>
+        
+        <div class="processo-item">
+          <div class="processo-icone">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <h3 class="processo-titulo">2. Preencha o Formulário</h3>
+          <p class="processo-texto">Complete o formulário de adoção com suas informações.</p>
+        </div>
+        
+        <div class="processo-item">
+          <div class="processo-icone">
+            <i class="fa-solid fa-house-user"></i>
+          </div>
+          <h3 class="processo-titulo">3. Visita Domiciliar</h3>
+          <p class="processo-texto">Faremos uma visita para verificar se o ambiente é adequado.</p>
+        </div>
+        
+        <div class="processo-item">
+          <div class="processo-icone">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="processo-titulo">4. Adoção Finalizada</h3>
+          <p class="processo-texto">Após aprovação, você poderá levar seu novo amigo para casa!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <span class="footer__texto">
-      Feito com
-      <img class="icone icone--texto" alt="amor" src="assets/img/coracao.svg">
-      por Regiane Cabral
-    </span>
+      <div class="footer-container">
+          <div class="footer-grid">
+              <div class="footer-coluna">
+                  <h3 class="footer-titulo">Pet Love</h3>
+                  <p>Somos uma organização dedicada a encontrar lares amorosos para animais abandonados, promovendo o bem-estar animal e a adoção responsável.</p>
+                  <div class="footer-social">
+                      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                  </div>
+              </div>
+              <div class="footer-coluna">
+                  <h3 class="footer-titulo">Links Rápidos</h3>
+                  <ul class="footer-links">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="sobre.html">Sobre Nós</a></li>
+                      <li><a href="galeria.html">Adoção</a></li>
+                      <li><a href="contato.html">Contato</a></li>
+                      <li><a href="#">Doe Agora</a></li>
+                  </ul>
+              </div>
+              <div class="footer-coluna">
+                  <h3 class="footer-titulo">Contato</h3>
+                  <ul class="footer-links">
+                      <li><i class="fa-solid fa-location-dot"></i> Av. Principal, 123</li>
+                      <li><i class="fa-solid fa-phone"></i> +55 1023 567</li>
+                      <li><i class="fa-solid fa-envelope"></i> contact.petlove@ong.com</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <div class="footer-copyright">
+                  &copy; 2025 Pet Love - Todos os direitos reservados | Feito com 
+                  <img class="icone icone--texto" alt="amor" src="assets/img/coracao.svg">
+                  por Regiane Cabral
+              </div>
+          </div>
+      </div>
   </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>

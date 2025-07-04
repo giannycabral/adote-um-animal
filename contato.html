@@ -5,49 +5,181 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Landing Page</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contato - Pet Love</title>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <div class="logo">
+                <i class="fa-solid fa-paw logo-icon"></i>
+                <a href="index.html">Pet Love</a>
+            </div>
+            
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-    <nav>
-
-        <div class="logo">
-            <a href="index.html">Pet Love</a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-images"></i> Adoção</a></li>
+                <li><a href="contato.html"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+            </ul>
         </div>
-
-        <ul>
-            <li> <a href="index.html"> Home </a> </li>
-            <li> <a href="sobre.html"> Sobre </a> </li>
-            <li> <a href="galeria.html"> Fotos </a> </li>
-            <li> <a href="contato.html"> Contato </a> </li>
-        </ul>
-
     </nav>
 
-    <main id="main">
-        <form class="form">
-            <h2 class="sub_form">FORMULÁRIO DE CONTATO</h2>
-            <p type="Nome:"><input placeholder="Escreva seu nome aqui.."></input></p>
-            <p type="Email:"><input placeholder="Entraremos em contao o mais breve.."></input></p>
-            <p type="Messagem:"><input placeholder="Digite sua mensagem.."></input></p>
-            <button>Enviar Mensagem</button>
+    <!-- Título da Página -->
+    <div style="height: 80px;"></div>
 
-            <div class="contact">
-                <span class="fa fa-phone"></span>+55 1023 567
-                <span class="fa fa-envelope-o"></span> contact.petlove@ong.com
+    <!-- Contato Section -->
+    <section class="contato-section">
+        <div class="container">
+            <div class="contato-container">
+                <div class="contato-info">
+                    <h2 class="contato-titulo">Entre em Contato</h2>
+                    <p class="contato-texto">Estamos sempre disponíveis para ajudar e responder qualquer pergunta. Sinta-se à vontade para entrar em contato conosco pelos canais abaixo ou utilizando o formulário.</p>
+                    
+                    <div class="contato-detalhes">
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3>Endereço</h3>
+                                <p>Av. Principal, 123, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3>Telefone</h3>
+                                <p>+55 1023 567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>E-mail</h3>
+                                <p>contact.petlove@ong.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Horário de Atendimento</h3>
+                                <p>Segunda - Sexta: 9h - 18h<br>Sábado: 10h - 15h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contato-form">
+                    <h2>Envie sua Mensagem</h2>
+                    <form id="formContato" class="contato-form">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" id="nome" class="form-control" placeholder="Digite seu nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <select id="assunto" class="form-control">
+                                <option value="">Selecione um assunto</option>
+                                <option value="adocao">Informações sobre adoção</option>
+                                <option value="doacao">Fazer uma doação</option>
+                                <option value="voluntario">Ser voluntário</option>
+                                <option value="denuncia">Denunciar maus-tratos</option>
+                                <option value="outro">Outro assunto</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea id="mensagem" class="form-control" placeholder="Digite sua mensagem" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
             </div>
-        </form>
-    </main>
+        </div>
+    </section>
 
+    <!-- Mapa Section -->
+    <section class="mapa-section">
+        <div class="container">
+            <h2 class="mapa-titulo">Nossa Localização</h2>
+            <div class="mapa-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098097094649!2d-46.65390548440848!3d-23.56507176760351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647889142591!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0; border-radius: var(--border-radius-md);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <span class="footer__texto">
-            Feito com
-            <img class="icone icone--texto" alt="amor" src="assets/img/coracao.svg">
-            por Regiane Cabral
-        </span>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-coluna">
+                    <h3 class="footer-titulo">Pet Love</h3>
+                    <p>Somos uma organização dedicada a encontrar lares amorosos para animais abandonados, promovendo o bem-estar animal e a adoção responsável.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-coluna">
+                    <h3 class="footer-titulo">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="galeria.html">Adoção</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Doe Agora</a></li>
+                    </ul>
+                </div>
+                <div class="footer-coluna">
+                    <h3 class="footer-titulo">Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot"></i> Av. Principal, 123</li>
+                        <li><i class="fa-solid fa-phone"></i> +55 1023 567</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact.petlove@ong.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2025 Pet Love - Todos os direitos reservados | Feito com 
+                    <img class="icone icone--texto" alt="amor" src="assets/img/coracao.svg">
+                    por Regiane Cabral
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
