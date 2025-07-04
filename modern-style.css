@@ -181,7 +181,13 @@ img {
 /*------------HERO SECTION----------*/
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('assets/img/background.jpg');
+  /* Background base com cor sólida próxima à imagem para carregamento rápido */
+  background-color: #684d2e; 
+  /* Carregamento progressivo da imagem */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+    url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gIcSUNDX1BST0ZJTEUAAQEAAAIMbGNtcwIQAABtbnRyUkdCIFhZWiAH3AABABkAAwApADlhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAF5jcHJ0AAABXAAAAAt3dHB0AAABaAAAABRia3B0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFlaAAABuAAAABRyVFJDAAABzAAAAEBnVFJDAAABzAAAAEBiVFJDAAABzAAAAEBkZXNjAAAAAAAAAANjMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAElYAABYWVogAAAAAAAA9tYAAQAAAADTLVhZWiAAAAAAAAADFgAAAzMAAAKkWFlaIAAAAAAAAG+iAAA49QAAA5BYWVogAAAAAAAAYpkAALeFAAAY2lhZWiAAAAAAAAAkoAAAD4QAALbPY3VydgAAAAAAAAAaAAAAywHJA2MFkghrC/YQPxVRGzQh8SmQMhg7kkYFUXdd7WtwegWJsZp8rGm/fdPD6TD////bAIQAAgICAwMDAwQEAwUFBQUFBwYGBgYHCgcIBwgHCg8KCwoKCwoPDhEODQ4RDhgTERETGBwYFxgcIh8fIispKzg4SwECAgIDAwMDBAQDBQUFBQUHBgYGBgcKBwgHCAcKDwoLCgoLCg8OEQ4NDhEOGBMRERMYHBgXGBwiHx8iKykrODhL/8AAEQgAKABQAwEiAAIRAQMRAf/EAKYAAAICAwEBAAAAAAAAAAAAAAYHBQgCAwQBCRAAAgEDAwIFAgMJAAAAAAAAAAECAwQRBQYhBzESF0FRYZGhExQiFTJCcYGCscHRCAAAAQQCAgMAAAAAAAAAAAABAgMEBhEFIQASE0MHMhQBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEQMRAD8As1QoSpOV7XoU6U43E1TnUlFOcYNLjP6ZNzW9mWl2oQtqCjhKPPL4Xpn1ZG9SN2K32teVuLOnKdzUhiMF7L1b9Er89P8AB3FvyvaUq1VwTXhqRcvBLPDxwwJNVXsNtniKxtYL+YklzaMdV9hbSrT/AJQ1y7px90s/czbvbGzrSUZ2m7HUxnwtfuRWOc4wwrydwlDR9NqL99VYt+/iyCPkbe9PnUj+d9+Ff6Kuw2XaTX/j3H0p5/2BnajouyvIyno+5fxV/DCTa+gEbDeBNOw13Tv5OrmjOO47S8bzS6U7P+Ul7fJa3pXv5b42bC7ypXlLwVZ44y8ePujn3TMnqVbdNttXC8xT1K9w/wBUeWl8LBNNNL+wx5QSCCCCC0gs9rNt6xpNWnZXlWvZ1peKXj5y17Nt+hE9a2xq2pW9b9kbouK3jwvA5fpkvTHoiw4IMEWbE2lrXUfcytqCnT07n8a45XHDSXu3j7Fy9C0K00KzoaVaLFGhHCXv7v7smyEAoAAAAwAAAAAAAAAAAAAA//Z'),
+    url('assets/img/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -192,6 +198,7 @@ img {
   padding-top: 70px;
   position: relative;
   overflow: hidden;
+  animation: heroFadeIn 0.5s ease-in;
 }
 
 .hero::before {
@@ -202,6 +209,45 @@ img {
   height: 100px;
   background: linear-gradient(to top, var(--cor-fundo-claro), transparent);
   z-index: 1;
+}
+
+.hero-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-primaria);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 0.8;
+  animation: loaderFadeOut 1.5s ease-out forwards;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes loaderFadeOut {
+  0% { opacity: 0.9; }
+  70% { opacity: 0.5; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
 }
 
 .hero-content {

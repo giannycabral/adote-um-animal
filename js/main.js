@@ -1,6 +1,23 @@
 // Arquivo para incluir e carregar todos os scripts necessários no site
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Otimização de carregamento de imagem
+    const heroSection = document.querySelector('.hero');
+    if(heroSection) {
+        // Verifica se a página já está carregada
+        if (document.readyState === 'complete') {
+            const loader = document.querySelector('.hero-loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 800);
+            }
+        }
+    }
+
     // Navegação responsiva
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');

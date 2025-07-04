@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pré-carregamento da imagem crítica -->
+    <link rel="preload" as="image" href="assets/img/background.jpg" fetchpriority="high">
+    <meta name="description" content="Pet Love - ONG dedicada à adoção responsável de animais abandonados">
     <link rel="stylesheet" href="modern-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Pet Love - Adoção de Animais</title>
@@ -34,6 +37,9 @@
         </div>
     </nav>
 
+    <!-- Preload da imagem de fundo principal -->
+    <link rel="preload" href="assets/img/background.jpg" as="image" fetchpriority="high">
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -43,6 +49,10 @@
                 <a href="sobre.html" class="btn btn-secondary">Saiba Mais</a>
                 <a href="contato.html" class="btn btn-primary">Fale Conosco</a>
             </div>
+        </div>
+        <!-- Overlay de carregamento que desaparece quando a imagem é carregada -->
+        <div class="hero-loader">
+            <div class="spinner"></div>
         </div>
     </section>
 
@@ -125,8 +135,29 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  
+  <!-- Script para otimizar o carregamento de imagem -->
+  <script>
+    // Função para gerenciar o carregamento da imagem de fundo
+    document.addEventListener('DOMContentLoaded', function() {
+      // Pré-carrega a imagem de fundo
+      const backgroundImage = new Image();
+      backgroundImage.src = 'assets/img/background.jpg';
+      
+      // Esconde o loader quando a imagem estiver carregada
+      backgroundImage.onload = function() {
+        const loader = document.querySelector('.hero-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 500);
+        }
+      };
+    });
+  </script>
 </body>
 
 </html>
