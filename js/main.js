@@ -12,6 +12,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Filtro da equipe
+    const equipeTabs = document.querySelectorAll('.equipe-tab');
+    const equipeMembros = document.querySelectorAll('.equipe-membro');
+    
+    if(equipeTabs.length && equipeMembros.length) {
+        equipeTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remover classe active de todas as abas
+                equipeTabs.forEach(t => t.classList.remove('active'));
+                
+                // Adicionar classe active à aba clicada
+                this.classList.add('active');
+                
+                // Filtrar membros da equipe
+                const filtro = this.textContent.trim().toLowerCase();
+                
+                if(filtro === 'todos') {
+                    // Mostrar todos os membros
+                    equipeMembros.forEach(membro => {
+                        membro.style.display = 'block';
+                        // Animação de entrada
+                        setTimeout(() => {
+                            membro.style.opacity = '1';
+                            membro.style.transform = 'translateY(0)';
+                        }, 50);
+                    });
+                } else {
+                    // Filtrar membros por categoria
+                    equipeMembros.forEach(membro => {
+                        const cargo = membro.querySelector('.equipe-cargo').textContent.toLowerCase();
+                        
+                        if(cargo.includes(filtro) || 
+                           (filtro === 'fundadores' && cargo.includes('fundador')) ||
+                           (filtro === 'veterinários' && cargo.includes('veterinár')) ||
+                           (filtro === 'voluntários' && cargo.includes('volunt'))) {
+                            membro.style.display = 'block';
+                            // Animação de entrada
+                            setTimeout(() => {
+                                membro.style.opacity = '1';
+                                membro.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            // Esconder membros que não correspondem ao filtro
+                            membro.style.display = 'none';
+                            membro.style.opacity = '0';
+                            membro.style.transform = 'translateY(20px)';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Definir o estilo inicial para animação
+        equipeMembros.forEach(membro => {
+            membro.style.transition = 'all 0.5s ease';
+        });
+    }
+    
     // Efeito de scroll na navbar
     const navbar = document.querySelector('.navbar');
     if(navbar) {
