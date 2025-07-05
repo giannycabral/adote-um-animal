@@ -5,9 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os animais disponíveis para adoção na Pet Love. Cães, gatos e outros animais que esperam por um novo lar cheio de amor.">
+  <!-- Pré-carregamento das imagens críticas -->
+  <link rel="preload" href="assets/img/foto1.jpg" as="image">
+  <link rel="preload" href="assets/img/foto2.jpg" as="image">
   <link rel="stylesheet" href="modern-style.css">
+  <link rel="stylesheet" href="modern-style-adocao.css">
+  <link rel="stylesheet" href="modern-style-filtros.css">
+  <link rel="stylesheet" href="modern-style-modais.css">
+  <link rel="stylesheet" href="modern-style-busca.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <title>Adoção - Pet Love</title>
+  <title>Adote um Pet - Conheça Nossos Animais | Pet Love</title>
 </head>
 
 <body>
@@ -34,73 +42,563 @@
       </div>
   </nav>
 
-  <!-- Título da Página -->
-  <div style="height: 80px;"></div>
+  <!-- Barra de Busca Global -->
+  <div class="busca-container">
+    <div class="container">
+      <div class="busca-wrapper">
+        <div class="busca-input-container">
+          <i class="fas fa-search busca-icon"></i>
+          <input type="text" class="busca-input" placeholder="Buscar no site..." id="busca-global">
+          <button class="busca-clear-btn" id="limpar-busca-global"><i class="fas fa-times"></i></button>
+        </div>
+        <button class="busca-btn" id="btn-busca-global">Buscar</button>
+      </div>
+      <div class="busca-sugestoes" id="busca-global-sugestoes">
+        <div class="busca-sugestoes-grupo">
+          <span class="busca-tag-sugestao" data-busca="filhote">Filhotes</span>
+          <span class="busca-tag-sugestao" data-busca="gato">Gatos</span>
+          <span class="busca-tag-sugestao" data-busca="cachorro">Cachorros</span>
+          <span class="busca-tag-sugestao" data-busca="vacinado">Vacinados</span>
+          <span class="busca-tag-sugestao" data-busca="castrado">Castrados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Banner para Adoção -->
+  <section class="adocao-hero">
+    <div class="adocao-hero-overlay"></div>
+    <div class="container">
+      <div class="adocao-hero-content">
+        <h1 class="adocao-hero-titulo">Adote um Amigo Para a Vida</h1>
+        <p class="adocao-hero-subtitulo">Um pequeno gesto de amor que transforma para sempre: uma vida salva, um coração preenchido!</p>
+        <div class="hero-buttons">
+          <a href="#galeria-grid" class="hero-btn-principal"><i class="fas fa-paw"></i> Conheça Nossos Pets</a>
+          <a href="#form-adocao" class="hero-btn-secundario"><i class="fas fa-heart"></i> Quero Adotar</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Seção de Galeria -->
   <section class="galeria-section">
-    <div class="galeria-header">
-      <h2 class="galeria-titulo">Nossos Animais para Adoção</h2>
-      <p class="galeria-subtitulo">Conheça os amiguinhos que estão esperando um lar cheio de amor e carinho. Todos estão vacinados e prontos para uma nova vida!</p>
-    </div>
+    <div class="container">
+      <div class="galeria-header">
+        <h2 class="galeria-titulo">Nossos Animais para Adoção</h2>
+        <p class="galeria-subtitulo">Conheça os amiguinhos que estão esperando um lar cheio de amor e carinho. Todos estão vacinados e prontos para uma nova vida!</p>
+      </div>
+      
+      <!-- Sistema de busca e filtros avançados -->
+      <div class="galeria-busca-container">
+        <div class="galeria-busca">
+          <i class="fas fa-search galeria-busca-icon"></i>
+          <input type="text" id="galeria-busca-input" class="galeria-busca-input" placeholder="Buscar por nome, idade, características...">
+          <button class="galeria-busca-limpar" id="limpar-busca"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="galeria-filtros-toggle">
+          <button class="filtros-toggle-btn" id="toggle-filtros">
+            <i class="fas fa-sliders-h"></i> Filtros avançados <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Painel de filtros avançados -->
+      <div class="galeria-filtros-painel" id="filtros-painel">
+        <div class="galeria-filtros-grupos">
+          <div class="filtro-grupo">
+            <h4 class="filtro-titulo">Tipo de Animal</h4>
+            <div class="filtro-opcoes">
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="todos" checked> <span>Todos</span>
+              </label>
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="cachorro"> <span><i class="fas fa-dog"></i> Cachorros</span>
+              </label>
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="gato"> <span><i class="fas fa-cat"></i> Gatos</span>
+              </label>
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="outro"> <span><i class="fas fa-paw"></i> Outros</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filtro-grupo">
+            <h4 class="filtro-titulo">Idade</h4>
+            <div class="filtro-opcoes">
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="filhote"> <span><i class="fas fa-baby"></i> Filhotes</span>
+              </label>
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="jovem"> <span><i class="fas fa-child"></i> Jovens</span>
+              </label>
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="adulto"> <span><i class="fas fa-user"></i> Adultos</span>
+              </label>
+              <label class="filtro-checkbox">
+                <input type="checkbox" data-filter="idoso"> <span><i class="fas fa-blind"></i> Idosos</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filtro-grupo">
+            <h4 class="filtro-titulo">Características</h4>
+            <div class="filtro-opcoes filtro-opcoes-tags">
+              <label class="filtro-tag">
+                <input type="checkbox" data-filter="brincalhao"> <span>Brincalhão</span>
+              </label>
+              <label class="filtro-tag">
+                <input type="checkbox" data-filter="calmo"> <span>Calmo</span>
+              </label>
+              <label class="filtro-tag">
+                <input type="checkbox" data-filter="carinhoso"> <span>Carinhoso</span>
+              </label>
+              <label class="filtro-tag">
+                <input type="checkbox" data-filter="sociavel"> <span>Sociável</span>
+              </label>
+              <label class="filtro-tag">
+                <input type="checkbox" data-filter="especial"> <span>Necessidades Especiais</span>
+              </label>
+              <label class="filtro-tag">
+                <input type="checkbox" data-filter="castrado"> <span>Castrado</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="filtro-grupo filtro-tamanho">
+            <h4 class="filtro-titulo">Tamanho</h4>
+            <div class="filtro-opcoes">
+              <div class="filtro-tamanho-opcao">
+                <input type="range" id="filtro-tamanho-range" min="1" max="4" step="1" value="1">
+                <div class="filtro-tamanho-labels">
+                  <span>Mini</span>
+                  <span>Pequeno</span>
+                  <span>Médio</span>
+                  <span>Grande</span>
+                </div>
+                <div class="tamanho-selecionado">Tamanho: <span id="tamanho-valor">Todos</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="filtro-acoes">
+          <button class="filtro-btn-limpar" id="limpar-todos-filtros"><i class="fas fa-undo"></i> Limpar filtros</button>
+          <button class="filtro-btn-aplicar" id="aplicar-filtros"><i class="fas fa-check"></i> Aplicar filtros</button>
+        </div>
+      </div>
+      
+      <!-- Tags de filtros aplicados -->
+      <div class="filtros-aplicados" id="filtros-aplicados">
+        <!-- Tags serão inseridas dinamicamente via JavaScript -->
+      </div>
     
-    <div class="galeria-grid">
-      <div class="galeria-item">
-        <img src="assets/img/foto1.jpg" alt="Dois gatinhos filhotes">
+    <div class="galeria-grid" id="galeria-grid">
+      <div class="galeria-item" 
+           data-categoria="gato filhote" 
+           data-nome="Luna e Sol" 
+           data-idade="2 meses" 
+           data-genero="femea" 
+           data-tamanho="pequeno"
+           data-caracteristicas="docil,brincalhao,sociavel"
+           data-local="São Paulo, SP">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag">Disponível</span>
+          <span class="galeria-urgencia">Recém-chegados</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="assets/img/foto1.jpg" alt="Dois gatinhos filhotes" class="galeria-imagem">
         <div class="galeria-overlay">
           <h3 class="galeria-animal-nome">Luna e Sol</h3>
           <p class="galeria-animal-info">2 meses • Fêmeas • Vacinadas</p>
-          <a href="#" class="galeria-btn">Quero Adotar</a>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="luna-sol">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-home"></i> Precisa de espaço</span>
+            <span><i class="fas fa-heart"></i> Dóceis</span>
+          </div>
         </div>
       </div>
       
-      <div class="galeria-item">
-        <img src="assets/img/foto2.jpg" alt="Um cachorrinho com a lingua de fora">
+      <div class="galeria-item" 
+           data-categoria="cachorro adulto" 
+           data-nome="Thor" 
+           data-idade="1 ano" 
+           data-genero="macho" 
+           data-tamanho="medio"
+           data-caracteristicas="energetico,brincalhao,ama-criancas"
+           data-local="São Paulo, SP">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag">Disponível</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="assets/img/foto2.jpg" alt="Um cachorrinho com a lingua de fora" class="galeria-imagem">
         <div class="galeria-overlay">
           <h3 class="galeria-animal-nome">Thor</h3>
           <p class="galeria-animal-info">1 ano • Macho • Vacinado</p>
-          <a href="#" class="galeria-btn">Quero Adotar</a>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="thor">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-running"></i> Energético</span>
+            <span><i class="fas fa-child"></i> Ama crianças</span>
+          </div>
         </div>
       </div>
       
-      <div class="galeria-item">
-        <img src="assets/img/foto3.jpg" alt="Um gatinho">
+      <div class="galeria-item" 
+           data-categoria="gato filhote" 
+           data-nome="Simba" 
+           data-idade="6 meses" 
+           data-genero="macho" 
+           data-tamanho="pequeno"
+           data-caracteristicas="calmo,brincalhao,castrado"
+           data-local="Rio de Janeiro, RJ">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag">Disponível</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="assets/img/foto3.jpg" alt="Um gatinho" class="galeria-imagem">
         <div class="galeria-overlay">
           <h3 class="galeria-animal-nome">Simba</h3>
           <p class="galeria-animal-info">6 meses • Macho • Castrado</p>
-          <a href="#" class="galeria-btn">Quero Adotar</a>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="simba">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-moon"></i> Tranquilo</span>
+            <span><i class="fas fa-paw"></i> Brincalhão</span>
+          </div>
         </div>
       </div>
       
-      <div class="galeria-item">
-        <img src="assets/img/foto4.jpg" alt="Foto de três cachorros">
+      <div class="galeria-item" 
+           data-categoria="cachorro filhote" 
+           data-nome="Irmãos Travessos" 
+           data-idade="4 meses" 
+           data-genero="macho" 
+           data-tamanho="pequeno"
+           data-caracteristicas="brincalhao,sociavel,energetico"
+           data-local="Belo Horizonte, MG">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag">Disponível</span>
+          <span class="galeria-urgencia galeria-destaque">Múltiplos</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="assets/img/foto4.jpg" alt="Foto de três cachorros" class="galeria-imagem">
         <div class="galeria-overlay">
           <h3 class="galeria-animal-nome">Irmãos Travessos</h3>
           <p class="galeria-animal-info">4 meses • Três irmãos</p>
-          <a href="#" class="galeria-btn">Quero Adotar</a>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="irmaos">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-users"></i> Adoram companhia</span>
+            <span><i class="fas fa-smile"></i> Muito amigáveis</span>
+          </div>
         </div>
       </div>
       
-      <div class="galeria-item">
-        <img src="assets/img/foto5.jpg" alt="Dois coelhos fofos">
+      <div class="galeria-item" 
+           data-categoria="outro adulto" 
+           data-nome="Cenoura e Alfafa" 
+           data-idade="1 ano" 
+           data-genero="ambos" 
+           data-tamanho="mini"
+           data-caracteristicas="calmo,docil,sociavel"
+           data-local="Curitiba, PR">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag">Disponível</span>
+          <span class="galeria-urgencia">Em par</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="assets/img/foto5.jpg" alt="Dois coelhos fofos" class="galeria-imagem">
         <div class="galeria-overlay">
           <h3 class="galeria-animal-nome">Cenoura e Alfafa</h3>
           <p class="galeria-animal-info">1 ano • Casal • Vacinados</p>
-          <a href="#" class="galeria-btn">Quero Adotar</a>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="coelhos">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-carrot"></i> Vegetarianos</span>
+            <span><i class="fas fa-leaf"></i> Limpos</span>
+          </div>
         </div>
       </div>
       
-      <div class="galeria-item">
-        <img src="assets/img/foto6.jpg" alt="Quatro gatinhos filhotes">
+      <div class="galeria-item" 
+           data-categoria="gato filhote" 
+           data-nome="Quarteto Fantástico" 
+           data-idade="2 meses" 
+           data-genero="ambos" 
+           data-tamanho="mini"
+           data-caracteristicas="brincalhao,sociavel,docil"
+           data-local="São Paulo, SP">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag galeria-tag-especial">Especial</span>
+          <span class="galeria-urgencia galeria-urgencia-alta">Urgente</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="assets/img/foto6.jpg" alt="Quatro gatinhos filhotes" class="galeria-imagem">
         <div class="galeria-overlay">
           <h3 class="galeria-animal-nome">Quarteto Fantástico</h3>
           <p class="galeria-animal-info">2 meses • Filhotes</p>
-          <a href="#" class="galeria-btn">Quero Adotar</a>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="quarteto">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-star"></i> Super fofos</span>
+            <span><i class="fas fa-gamepad"></i> Brincalhões</span>
+          </div>
         </div>
+      </div>
+      
+      <!-- Novos animais adicionados -->
+      <div class="galeria-item" 
+           data-categoria="cachorro adulto especial" 
+           data-nome="Max" 
+           data-idade="3 anos" 
+           data-genero="macho" 
+           data-tamanho="medio"
+           data-caracteristicas="especial,carinhoso,docil"
+           data-local="Salvador, BA">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag galeria-tag-especial">Necessidades Especiais</span>
+          <span class="galeria-urgencia galeria-urgencia-media">Prioridade</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <div class="galeria-ribbon">Especial</div>
+        <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Cachorro com necessidades especiais" class="galeria-imagem">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Max</h3>
+          <p class="galeria-animal-info">3 anos • Macho • Deficiência visual</p>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="max">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-heart"></i> Super carinhoso</span>
+            <span><i class="fas fa-volume-up"></i> Ótima audição</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="galeria-item" 
+           data-categoria="gato adulto" 
+           data-nome="Nina" 
+           data-idade="5 anos" 
+           data-genero="femea" 
+           data-tamanho="medio"
+           data-caracteristicas="calmo,carinhoso,castrado"
+           data-local="Brasília, DF">
+        <div class="galeria-badge-container">
+          <span class="galeria-tag">Disponível</span>
+        </div>
+        <div class="galeria-acoes">
+          <div class="galeria-favorito" title="Adicionar aos favoritos"><i class="far fa-heart"></i></div>
+          <div class="galeria-compartilhar" title="Compartilhar"><i class="fas fa-share-alt"></i></div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gata adulta" class="galeria-imagem">
+        <div class="galeria-overlay">
+          <h3 class="galeria-animal-nome">Nina</h3>
+          <p class="galeria-animal-info">5 anos • Fêmea • Castrada</p>
+          <div class="galeria-botoes">
+            <button class="galeria-btn-info" data-animal="nina">Mais Detalhes</button>
+            <a href="#form-adocao" class="galeria-btn">Quero Adotar</a>
+          </div>
+          <div class="galeria-caracteristicas">
+            <span><i class="fas fa-couch"></i> Calma</span>
+            <span><i class="fas fa-sun"></i> Ama tomar sol</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Status dos resultados da galeria -->
+      <div id="galeria-sem-resultados" class="galeria-sem-resultados" style="display: none;">
+        <div class="sem-resultados-icone">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>Nenhum animal encontrado</h3>
+        <p>Tente outros filtros ou remova alguns critérios de busca.</p>
+        <button class="btn-resetar-busca">Resetar Busca</button>
       </div>
     </div>
     
-    <button class="btn btn-ver-mais">Ver Mais Animais</button>
+    <!-- Sistema de paginação e carregamento -->
+    <div class="galeria-navegacao">
+      <div class="galeria-estatisticas">
+        <span id="galeria-contagem-resultados">Exibindo 8 animais</span>
+        <span id="galeria-totais" class="galeria-totais">
+          <div class="galeria-total-item">
+            <i class="fas fa-dog"></i> <span id="total-cachorros">4</span>
+          </div>
+          <div class="galeria-total-item">
+            <i class="fas fa-cat"></i> <span id="total-gatos">3</span>
+          </div>
+          <div class="galeria-total-item">
+            <i class="fas fa-paw"></i> <span id="total-outros">1</span>
+          </div>
+        </span>
+      </div>
+      
+      <div class="galeria-paginacao">
+        <button class="paginacao-btn paginacao-anterior" disabled>
+          <i class="fas fa-chevron-left"></i> Anterior
+        </button>
+        <div class="paginacao-numeros">
+          <span class="paginacao-numero ativo">1</span>
+          <span class="paginacao-numero">2</span>
+          <span class="paginacao-numero">3</span>
+          <span class="paginacao-dots">...</span>
+          <span class="paginacao-numero">10</span>
+        </div>
+        <button class="paginacao-btn paginacao-proxima">
+          Próxima <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <div class="load-more-container">
+        <button class="btn btn-ver-mais" id="load-more">Carregar Mais</button>
+        <div class="loader" id="gallery-loader">
+          <div class="spinner"></div>
+          <span>Carregando mais animais...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Formulário de Adoção -->
+  <section id="form-adocao" class="adocao-form-section">
+    <div class="container">
+      <div class="adocao-form-container">
+        <div class="adocao-form-info">
+          <h2 class="adocao-form-titulo">Formulário de Adoção</h2>
+          <p class="adocao-form-subtitulo">Preencha o formulário abaixo para iniciar o processo de adoção. Entraremos em contato em até 48 horas.</p>
+          <div class="adocao-form-etapas">
+            <div class="etapa">
+              <div class="etapa-numero">1</div>
+              <div class="etapa-info">
+                <h3>Preenchimento</h3>
+                <p>Complete este formulário com seus dados e preferências</p>
+              </div>
+            </div>
+            <div class="etapa">
+              <div class="etapa-numero">2</div>
+              <div class="etapa-info">
+                <h3>Análise</h3>
+                <p>Avaliaremos seu perfil e compatibilidade</p>
+              </div>
+            </div>
+            <div class="etapa">
+              <div class="etapa-numero">3</div>
+              <div class="etapa-info">
+                <h3>Visita</h3>
+                <p>Agendaremos uma visita domiciliar</p>
+              </div>
+            </div>
+            <div class="etapa">
+              <div class="etapa-numero">4</div>
+              <div class="etapa-info">
+                <h3>Finalização</h3>
+                <p>Assinatura do termo de adoção responsável</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="adocao-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+              <label for="cidade">Cidade/Estado</label>
+              <input type="text" id="cidade" name="cidade" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="animal-interesse">Animal de Interesse</label>
+            <input type="text" id="animal-interesse" name="animal-interesse">
+            <small>Deixe em branco se ainda está decidindo</small>
+          </div>
+          
+          <div class="form-group">
+            <label>Tipo de Residência</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="residencia" value="casa"> Casa
+              </label>
+              <label>
+                <input type="radio" name="residencia" value="apartamento"> Apartamento
+              </label>
+              <label>
+                <input type="radio" name="residencia" value="outro"> Outro
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Tem espaço ao ar livre?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="espaco" value="sim"> Sim
+              </label>
+              <label>
+                <input type="radio" name="espaco" value="nao"> Não
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensagem">Por que deseja adotar?</label>
+            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+          </div>
+          
+          <button type="submit" class="adocao-form-btn">Enviar Solicitação</button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- Seção Como Funciona -->
@@ -143,6 +641,65 @@
       </div>
     </div>
   </section>
+  
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-titulo">Perguntas Frequentes</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <h3>Quais são os requisitos para adotar?</h3>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-resposta">
+            <p>Para adotar, você precisa ser maior de 18 anos, apresentar documento de identidade, comprovante de residência, passar por uma entrevista e permitir uma visita ao local onde o animal irá viver.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <h3>Os animais são vacinados e castrados?</h3>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-resposta">
+            <p>Sim! Todos os nossos animais são entregues vacinados, vermifugados e, se tiverem idade adequada, já castrados. Caso ainda não tenham sido castrados por serem muito jovens, orientamos sobre o procedimento futuro.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <h3>Existe alguma taxa para adoção?</h3>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-resposta">
+            <p>Não cobramos taxa de adoção, mas aceitamos contribuições voluntárias que ajudam a manter nosso trabalho. O mais importante é garantir um lar responsável e amoroso.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <h3>O que acontece após a adoção?</h3>
+            <i class="fas fa-plus"></i>
+          </div>
+          <div class="faq-resposta">
+            <p>Fazemos acompanhamento pós-adoção para garantir que o animal esteja bem adaptado. Oferecemos suporte e orientações durante este período de adaptação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal para detalhes dos animais -->
+  <div class="animal-modal-overlay" id="animal-modal-overlay">
+    <div class="animal-modal">
+      <button class="animal-modal-fechar"><i class="fas fa-times"></i></button>
+      <div class="animal-modal-content">
+        <!-- Conteúdo será preenchido pelo JavaScript -->
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -189,6 +746,11 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/filtros.js"></script>
+  <script src="js/detalhes-animal.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/busca.js"></script>
 </body>
 
 </html>

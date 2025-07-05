@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="modern-style.css">
+    <link rel="stylesheet" href="modern-style-busca.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Contato - Pet Love</title>
 </head>
@@ -34,8 +35,31 @@
         </div>
     </nav>
 
+    <!-- Barra de Busca -->
+    <div class="busca-container">
+        <div class="container">
+            <div class="busca-wrapper">
+                <div class="busca-input-container">
+                    <i class="fas fa-search busca-icon"></i>
+                    <input type="text" class="busca-input" placeholder="Buscar no site..." id="busca-global">
+                    <button class="busca-clear-btn" id="limpar-busca-global"><i class="fas fa-times"></i></button>
+                </div>
+                <button class="busca-btn" id="btn-busca-global">Buscar</button>
+            </div>
+            <div class="busca-sugestoes" id="busca-global-sugestoes">
+                <div class="busca-sugestoes-grupo">
+                    <span class="busca-tag-sugestao" data-busca="adoção">Adoção</span>
+                    <span class="busca-tag-sugestao" data-busca="gatos">Gatos</span>
+                    <span class="busca-tag-sugestao" data-busca="cachorros">Cachorros</span>
+                    <span class="busca-tag-sugestao" data-busca="doação">Doação</span>
+                    <span class="busca-tag-sugestao" data-busca="voluntariado">Voluntariado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Título da Página -->
-    <div style="height: 80px;"></div>
+    <div style="height: 20px;"></div>
 
     <!-- Contato Section -->
     <section class="contato-section">
@@ -180,6 +204,7 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/busca.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,425 @@
+/* Estilos para modais e detalhes de animais */
+
+/* Modal para detalhes do animal */
+.animal-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.animal-modal-overlay.ativo {
+    display: flex;
+}
+
+.animal-modal {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animal-modal-fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+
+.animal-modal-fechar:hover {
+    color: var(--cor-primaria);
+}
+
+.animal-modal-content {
+    padding: 0;
+}
+
+.animal-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    min-height: 600px;
+}
+
+.animal-modal-imagem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
+}
+
+.animal-modal-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.animal-modal-info {
+    padding: 30px;
+}
+
+.animal-modal-info h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+.animal-modal-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.animal-badge {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.animal-badge-local {
+    background-color: #e1f5fe;
+    color: #0288d1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.animal-modal-descricao {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.animal-modal-secao {
+    margin-bottom: 25px;
+}
+
+.animal-modal-secao h3,
+.animal-modal-secao-grid h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--cor-primaria);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.animal-modal-secao h3:after,
+.animal-modal-secao-grid h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    border-radius: 2px;
+}
+
+.animal-caracteristicas-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.animal-tag {
+    background-color: #e6f7ff;
+    color: #0288d1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.animal-lista-requisitos,
+.animal-lista-vacinas {
+    list-style: none;
+    padding: 0;
+}
+
+.animal-lista-requisitos li,
+.animal-lista-vacinas li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.animal-lista-requisitos i {
+    color: #4caf50;
+}
+
+.animal-lista-vacinas i {
+    color: #2196f3;
+}
+
+.animal-modal-secao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.animal-modal-secao-grid h4 {
+    font-size: 1rem;
+    margin: 15px 0 10px;
+    color: #555;
+}
+
+.animal-modal-acoes {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.animal-modal-btn-adotar {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.animal-modal-btn-adotar:hover {
+    background-color: var(--cor-hover);
+}
+
+.animal-modal-btn-compartilhar {
+    background-color: #f0f0f0;
+    color: #555;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.animal-modal-btn-compartilhar:hover {
+    background-color: #e0e0e0;
+}
+
+/* Modal de compartilhamento */
+.compartilhar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.compartilhar-modal {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.compartilhar-modal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.compartilhar-opcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.compartilhar-opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #444;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+.compartilhar-opcao:hover {
+    background-color: #f0f0f0;
+}
+
+.compartilhar-opcao i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.compartilhar-opcao[data-rede="facebook"] i {
+    color: #1877f2;
+}
+
+.compartilhar-opcao[data-rede="twitter"] i {
+    color: #1da1f2;
+}
+
+.compartilhar-opcao[data-rede="whatsapp"] i {
+    color: #25d366;
+}
+
+.compartilhar-opcao[data-rede="email"] i {
+    color: #ea4335;
+}
+
+.compartilhar-fechar {
+    background-color: #f0f0f0;
+    color: #555;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.compartilhar-fechar:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilos para FAQ */
+.faq-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.faq-pergunta {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-pergunta h3 {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.faq-pergunta i {
+    color: var(--cor-primaria);
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.faq-item.ativo .faq-pergunta {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.faq-item.ativo .faq-pergunta i {
+    transform: rotate(45deg);
+}
+
+.faq-resposta {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.faq-item.ativo .faq-resposta {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-resposta p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Media queries */
+@media (max-width: 900px) {
+    .animal-modal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .animal-modal-imagem {
+        border-radius: 12px 12px 0 0;
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .animal-modal-secao-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .animal-modal-acoes {
+        flex-direction: column;
+    }
+    
+    .compartilhar-opcoes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .animal-modal-imagem {
+        height: 250px;
+    }
+}
