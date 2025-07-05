@@ -1,7 +1,150 @@
-// Manipulação do formulário de adoção
+// Manipulação dos formulários
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Referências aos elementos do formulário
+    // Formulário de Contato
+    const formContato = document.getElementById('formContato');
+    const formFeedback = document.getElementById('form-feedback');
+    const formSucesso = document.getElementById('form-sucesso');
+    
+    if (formContato) {
+        formContato.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulando envio do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const termos = document.getElementById('termos').checked;
+            
+            // Referência aos botões
+            const btnSubmit = formContato.querySelector('.btn-submit');
+            const btnReset = formContato.querySelector('.btn-reset');
+            const originalBtnText = btnSubmit.innerHTML;
+            
+            // Validação básica
+            if (!nome || !email || !mensagem || !termos) {
+                // Mostrar mensagem elegante de erro
+                const camposFaltantes = [];
+                if (!nome) camposFaltantes.push('Nome');
+                if (!email) camposFaltantes.push('Email');
+                if (!mensagem) camposFaltantes.push('Mensagem');
+                if (!termos) camposFaltantes.push('Concordar com os termos');
+                
+                showNotification(`Por favor, preencha os seguintes campos: ${camposFaltantes.join(', ')}.`, 'error');
+                return;
+            }
+            
+            // Desabilitar botões durante o envio
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            if (btnReset) btnReset.disabled = true;
+            
+            // Simulando envio para um servidor
+            simulateFormSubmission({nome, email, assunto, mensagem})
+                .then(response => {
+                    // Mostrar mensagem de sucesso
+                    formSucesso.classList.remove('hide');
+                    formContato.reset();
+                    
+                    // Role até a mensagem de sucesso
+                    formSucesso.scrollIntoView({behavior: 'smooth'});
+                    
+                    // Esconder mensagem de sucesso após 5 segundos
+                    setTimeout(() => {
+                        formSucesso.classList.add('hide');
+                    }, 5000);
+                    
+                    showNotification('Mensagem enviada com sucesso!', 'success');
+                })
+                .catch(error => {
+                    showNotification('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.', 'error');
+                })
+                .finally(() => {
+                    // Restaurar estado dos botões
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = originalBtnText;
+                    if (btnReset) btnReset.disabled = false;
+                });
+        });
+        
+        // Função para mostrar notificações
+        function showNotification(message, type) {
+            // Verificar se já existe uma notificação
+            let notification = document.querySelector('.form-notification');
+            if (notification) {
+                notification.remove();
+            }
+            
+            // Criar nova notificação
+            notification = document.createElement('div');
+            notification.className = `form-notification ${type === 'error' ? 'notification-error' : 'notification-success'}`;
+            
+            const icon = document.createElement('i');
+            icon.className = type === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-check-circle';
+            
+            const messageEl = document.createElement('span');
+            messageEl.textContent = message;
+            
+            notification.appendChild(icon);
+            notification.appendChild(messageEl);
+            
+            // Adicionar ao body
+            document.body.appendChild(notification);
+            
+            // Animar entrada
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            // Remover após 4 segundos
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 4000);
+        }
+        
+        // Tratamento para o botão de limpar campos
+        const btnReset = document.querySelector('.btn-reset');
+        if (btnReset) {
+            btnReset.addEventListener('click', function() {
+                // Esconde mensagem de sucesso se estiver visível
+                if (formSucesso && !formSucesso.classList.contains('hide')) {
+                    formSucesso.classList.add('hide');
+                }
+            });
+        }
+    }
+    
+    // Efeito de animação nos ícones de contato
+    const contatoItems = document.querySelectorAll('.contato-item');
+    if (contatoItems.length > 0) {
+        contatoItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.contato-icon i');
+                icon.classList.add('fa-beat');
+                
+                setTimeout(() => {
+                    icon.classList.remove('fa-beat');
+                }, 1000);
+            });
+        });
+    }
+    
+    // Simulação de API para envio do formulário
+    function simulateFormSubmission(data) {
+        return new Promise((resolve, reject) => {
+            // Simula uma chamada de API com um delay
+            setTimeout(() => {
+                console.log('Dados enviados:', data);
+                resolve({ success: true, message: 'Mensagem enviada com sucesso!' });
+            }, 1000);
+        });
+    }
+    
+    // Referências aos elementos do formulário de adoção
     const adocaoForm = document.querySelector('.adocao-form');
     
     if (adocaoForm) {

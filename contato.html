@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="modern-style.css">
     <link rel="stylesheet" href="modern-style-busca.css">
+    <link rel="stylesheet" href="modern-style-contato.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Contato - Pet Love</title>
 </head>
@@ -58,16 +59,29 @@
         </div>
     </div>
 
-    <!-- Título da Página -->
-    <div style="height: 20px;"></div>
+    <!-- Banner da página de contato -->
+    <div class="contato-banner">
+        <div class="contato-banner-overlay"></div>
+        <div class="container">
+            <div class="contato-banner-content">
+                <span class="contato-pre-titulo">Fale Conosco</span>
+                <h1 class="contato-banner-titulo">Entre em Contato</h1>
+                <p class="contato-banner-subtitulo">Estamos aqui para ajudar você e nossos amigos de quatro patas</p>
+                <div class="contato-breadcrumb">
+                    <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Contato</span>
+                </div>
+            </div>
+        </div>
+        <div class="banner-shape"></div>
+    </div>
 
     <!-- Contato Section -->
     <section class="contato-section">
         <div class="container">
             <div class="contato-container">
                 <div class="contato-info">
-                    <h2 class="contato-titulo">Entre em Contato</h2>
-                    <p class="contato-texto">Estamos sempre disponíveis para ajudar e responder qualquer pergunta. Sinta-se à vontade para entrar em contato conosco pelos canais abaixo ou utilizando o formulário.</p>
+                    <h2 class="contato-titulo">Como Podemos Ajudar?</h2>
+                    <p class="contato-texto">Nossa equipe está sempre disponível para responder suas dúvidas, ouvir sugestões ou ajudar com o processo de adoção. Entre em contato pelos canais abaixo ou preencha o formulário.</p>
                     
                     <div class="contato-detalhes">
                         <div class="contato-item">
@@ -139,11 +153,28 @@
                         
                         <div class="form-group">
                             <label for="mensagem" class="form-label">Mensagem</label>
-                            <textarea id="mensagem" class="form-control" placeholder="Digite sua mensagem" required></textarea>
+                            <textarea id="mensagem" class="form-control" placeholder="Digite sua mensagem" rows="5" required></textarea>
+                            <small class="form-texto-ajuda">Nos conte como podemos ajudar. Seja específico para que possamos atender melhor sua solicitação.</small>
                         </div>
                         
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="termos" required>
+                            <label for="termos">Concordo com os <a href="#">termos de privacidade</a> e com o uso dos meus dados para contato</label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Mensagem</button>
+                            <button type="reset" class="btn-reset"><i class="fas fa-undo"></i> Limpar Campos</button>
+                        </div>
                     </form>
+                    
+                    <div class="form-feedback" id="form-feedback">
+                        <div class="form-feedback-success hide" id="form-sucesso">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Mensagem Enviada!</h3>
+                            <p>Agradecemos seu contato. Nossa equipe responderá em breve.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,9 +183,185 @@
     <!-- Mapa Section -->
     <section class="mapa-section">
         <div class="container">
-            <h2 class="mapa-titulo">Nossa Localização</h2>
-            <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098097094649!2d-46.65390548440848!3d-23.56507176760351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647889142591!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0; border-radius: var(--border-radius-md);" allowfullscreen="" loading="lazy"></iframe>
+            <div class="mapa-header">
+                <h2 class="mapa-titulo">Nossa Localização</h2>
+                <p class="mapa-subtitulo">Venha nos visitar e conhecer pessoalmente nossos animais disponíveis para adoção</p>
+            </div>
+            
+            <div class="mapa-wrapper">
+                <!-- Mapa completo em tela cheia -->
+                <div class="mapa-fullview">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098097094649!2d-46.65390548440848!3d-23.56507176760351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647889142591!5m2!1spt-BR!2sbr" style="border:0; border-radius: var(--border-radius-md);" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <div class="mapa-info-container">
+                <div class="mapa-info-card">
+                    <div class="mapa-info-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="mapa-info-content">
+                        <h3>Endereço</h3>
+                        <p>Av. Principal, 123, Bela Vista<br>São Paulo - SP, 01310-000</p>
+                    </div>
+                </div>
+                
+                <div class="mapa-info-card">
+                    <div class="mapa-info-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="mapa-info-content">
+                        <h3>Como Chegar</h3>
+                        <p><strong>Metrô:</strong> Estação Paulista (Linha Verde)<br>
+                        <strong>Ônibus:</strong> Linhas 807A, 875A, 917M</p>
+                    </div>
+                </div>
+                
+                <div class="mapa-info-card">
+                    <div class="mapa-info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="mapa-info-content">
+                        <h3>Horário de Visitas</h3>
+                        <ul class="mapa-horarios">
+                            <li><span>Segunda a Sexta:</span> 09h às 18h</li>
+                            <li><span>Sábados:</span> 10h às 15h</li>
+                            <li><span>Domingos e Feriados:</span> Fechado</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mapa-info-card">
+                    <div class="mapa-info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="mapa-info-content">
+                        <h3>Observações</h3>
+                        <ul class="mapa-observacoes">
+                            <li>Estacionamento gratuito para visitantes</li>
+                            <li>Traga um documento com foto para visitar os animais</li>
+                            <li>Agendamento prévio para adoções</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mapa-cta">
+                <a href="#" class="mapa-btn">
+                    <i class="fas fa-directions"></i> Como Chegar
+                </a>
+                <a href="tel:+551023567" class="mapa-btn mapa-btn-outline">
+                    <i class="fas fa-phone"></i> Ligar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="faq-titulo">Perguntas Frequentes</h2>
+                <p class="faq-subtitulo">Respostas para as dúvidas mais comuns sobre nosso processo de adoção e serviços</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-pergunta">
+                        <h3>Como funciona o processo de adoção?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-resposta">
+                        <p>Nosso processo de adoção inclui o preenchimento de um formulário, uma entrevista com nossa equipe, uma visita ao nosso abrigo para conhecer o animal escolhido e, após aprovação, a assinatura de um termo de responsabilidade. Todo o processo visa garantir o bem-estar do animal e uma adoção consciente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pergunta">
+                        <h3>Quais documentos são necessários para adotar?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-resposta">
+                        <p>Para adotar um dos nossos animais, você precisará apresentar:</p>
+                        <ul>
+                            <li>Documento de identidade com foto (RG ou CNH)</li>
+                            <li>Comprovante de residência recente (últimos 3 meses)</li>
+                            <li>Comprovante de renda ou declaração de capacidade financeira</li>
+                            <li>Termo de adoção responsável assinado</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pergunta">
+                        <h3>Os animais são vacinados e castrados?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-resposta">
+                        <p>Sim! Todos os nossos animais são entregues vacinados, vermifugados e, quando possuem idade adequada, já castrados. Caso o animal ainda não tenha idade para castração, entregamos um voucher para o procedimento ser realizado posteriormente em uma clínica parceira.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pergunta">
+                        <h3>Existe taxa para adoção?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-resposta">
+                        <p>Solicitamos uma taxa simbólica de contribuição que ajuda a cobrir parte dos custos com vacinas, castração, vermifugação e cuidados gerais com o animal. O valor pode variar conforme a espécie e é informado durante o processo de adoção.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pergunta">
+                        <h3>Como posso ajudar sem adotar?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-resposta">
+                        <p>Existem várias maneiras de ajudar:</p>
+                        <ul>
+                            <li>Tornando-se um voluntário em nosso abrigo</li>
+                            <li>Fazendo doações financeiras ou materiais</li>
+                            <li>Participando como lar temporário</li>
+                            <li>Compartilhando nossas publicações nas redes sociais</li>
+                            <li>Participando de nossos eventos beneficentes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pergunta">
+                        <h3>Vocês oferecem acompanhamento pós-adoção?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-resposta">
+                        <p>Sim! Mantemos contato com as famílias adotantes para acompanhar a adaptação do animal ao novo lar. Oferecemos orientações sobre cuidados, alimentação e comportamento. Nossa equipe está sempre disponível para esclarecer dúvidas e auxiliar no que for preciso para garantir o bem-estar do animal adotado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2 class="cta-titulo">Outras Formas de Ajudar</h2>
+                    <p class="cta-texto">Além da adoção, existem várias maneiras de contribuir com nossa causa. Seja um voluntário, faça uma doação ou compartilhe nossa missão.</p>
+                    <div class="cta-acoes">
+                        <a href="#" class="cta-btn cta-btn-primary">
+                            <i class="fas fa-hand-holding-heart"></i> Fazer Doação
+                        </a>
+                        <a href="#" class="cta-btn cta-btn-secondary">
+                            <i class="fas fa-user-friends"></i> Ser Voluntário
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cta-imagem">
+                    <img src="assets/img/petlove.jpg" alt="Ajude nossa causa">
+                </div>
             </div>
         </div>
     </section>
@@ -205,6 +412,8 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/busca.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/faq.js"></script>
 </body>
 
 </html>
