@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="modern-style.css">
+    <link rel="stylesheet" href="modern-style-sobre.css">
+    <link rel="stylesheet" href="modern-style-busca.css">
+    <link rel="stylesheet" href="timeline-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Sobre Nós - Pet Love</title>
 </head>
@@ -34,16 +37,44 @@
         </div>
     </nav>
 
-    <!-- Título da Página -->
-    <div style="height: 80px;"></div>
-    
-    <!-- Hero Section -->
-    <section class="sobre-hero">
-        <div class="sobre-hero-content">
-            <h1 class="sobre-hero-title">Quem Somos</h1>
-            <p class="sobre-hero-subtitle">Conheça a história, missão e valores da Pet Love, uma ONG dedicada a transformar a vida dos animais abandonados desde 2010</p>
+    <!-- Barra de Busca -->
+    <div class="busca-container">
+        <div class="container">
+            <div class="busca-wrapper">
+                <div class="busca-input-container">
+                    <i class="fas fa-search busca-icon"></i>
+                    <input type="text" class="busca-input" placeholder="Buscar no site..." id="busca-global">
+                    <button class="busca-clear-btn" id="limpar-busca-global"><i class="fas fa-times"></i></button>
+                </div>
+                <button class="busca-btn" id="btn-busca-global">Buscar</button>
+            </div>
+            <div class="busca-sugestoes" id="busca-global-sugestoes">
+                <div class="busca-sugestoes-grupo">
+                    <span class="busca-tag-sugestao" data-busca="missão">Missão</span>
+                    <span class="busca-tag-sugestao" data-busca="história">História</span>
+                    <span class="busca-tag-sugestao" data-busca="voluntários">Voluntários</span>
+                    <span class="busca-tag-sugestao" data-busca="equipe">Equipe</span>
+                    <span class="busca-tag-sugestao" data-busca="valores">Valores</span>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Banner da página Sobre -->
+    <div class="sobre-banner">
+        <div class="sobre-banner-overlay"></div>
+        <div class="container">
+            <div class="sobre-banner-content">
+                <span class="sobre-pre-titulo">Nossa História</span>
+                <h1 class="sobre-banner-titulo">Quem Somos</h1>
+                <p class="sobre-banner-subtitulo">Conheça a história, missão e valores da Pet Love, uma ONG dedicada a transformar a vida dos animais abandonados desde 2010</p>
+                <div class="sobre-breadcrumb">
+                    <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Sobre Nós</span>
+                </div>
+            </div>
+        </div>
+        <div class="banner-shape"></div>
+    </div>
 
     <!-- Sobre Section -->
     <section class="sobre-section">
@@ -121,7 +152,7 @@
                         <h3>Fundação da ONG</h3>
                         <p>Criação da Pet Love por um grupo de 5 amigos veterinários com o resgate inicial de 10 animais abandonados.</p>
                     </div>
-                    <span class="timeline-date"><i class="fa-solid fa-flag"></i> 2010</span>
+                    <span class="timeline-date"><i class="fa-solid fa-flag"></i> <strong>2010</strong></span>
                     <div class="timeline-circle"><i class="fa-solid fa-star"></i></div>
                 </div>
                 
@@ -130,7 +161,7 @@
                         <h3>Primeira Sede</h3>
                         <p>Inauguração do primeiro espaço físico para abrigar os animais resgatados e expansão da equipe de voluntários.</p>
                     </div>
-                    <span class="timeline-date"><i class="fa-solid fa-building"></i> 2013</span>
+                    <span class="timeline-date"><i class="fa-solid fa-building"></i> <strong>2012</strong></span>
                     <div class="timeline-circle"><i class="fa-solid fa-home"></i></div>
                 </div>
                 
@@ -139,7 +170,7 @@
                         <h3>Centro Veterinário</h3>
                         <p>Abertura do nosso próprio centro veterinário para atendimento dos animais resgatados e serviço social.</p>
                     </div>
-                    <span class="timeline-date"><i class="fa-solid fa-stethoscope"></i> 2016</span>
+                    <span class="timeline-date"><i class="fa-solid fa-stethoscope"></i> <strong>2015</strong></span>
                     <div class="timeline-circle"><i class="fa-solid fa-kit-medical"></i></div>
                 </div>
                 
@@ -148,7 +179,7 @@
                         <h3>Expansão Nacional</h3>
                         <p>Expansão das operações para outras cidades e formação de parcerias com outras ONGs em todo o país.</p>
                     </div>
-                    <span class="timeline-date"><i class="fa-solid fa-earth-americas"></i> 2020</span>
+                    <span class="timeline-date"><i class="fa-solid fa-earth-americas"></i> <strong>2019</strong></span>
                     <div class="timeline-circle"><i class="fa-solid fa-map"></i></div>
                 </div>
                 
@@ -157,7 +188,7 @@
                         <h3>Presente</h3>
                         <p>Hoje contamos com mais de 45 voluntários e já realizamos mais de 1.200 adoções bem-sucedidas.</p>
                     </div>
-                    <span class="timeline-date"><i class="fa-solid fa-trophy"></i> 2025</span>
+                    <span class="timeline-date"><i class="fa-solid fa-trophy"></i> <strong>2025</strong></span>
                     <div class="timeline-circle"><i class="fa-solid fa-heart"></i></div>
                 </div>
             </div>
@@ -182,7 +213,7 @@
             <div class="equipe-grid">
                 <div class="equipe-membro">
                     <div class="equipe-foto">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Membro da equipe">
+                        <img src="assets/img/9.jpg" alt="Membro da equipe">
                     </div>
                     <div class="equipe-conteudo">
                         <div class="equipe-cargo-icon">
@@ -215,7 +246,7 @@
                 
                 <div class="equipe-membro">
                     <div class="equipe-foto">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Membro da equipe">
+                        <img src="assets/img/10.jpg" alt="Membro da equipe">
                     </div>
                     <div class="equipe-conteudo">
                         <div class="equipe-cargo-icon">
@@ -248,7 +279,7 @@
                 
                 <div class="equipe-membro">
                     <div class="equipe-foto">
-                        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Membro da equipe">
+                        <img src="assets/img/8.jpg" alt="Membro da equipe">
                     </div>
                     <div class="equipe-conteudo">
                         <div class="equipe-cargo-icon">
@@ -281,7 +312,7 @@
                 
                 <div class="equipe-membro">
                     <div class="equipe-foto">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Membro da equipe">
+                        <img src="assets/img/11.jpg" alt="Membro da equipe">
                     </div>
                     <div class="equipe-conteudo">
                         <div class="equipe-cargo-icon">
@@ -314,7 +345,7 @@
                 
                 <div class="equipe-membro">
                     <div class="equipe-foto">
-                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Membro da equipe">
+                        <img src="assets/img/7.jpg" alt="Membro da equipe">
                     </div>
                     <div class="equipe-conteudo">
                         <div class="equipe-cargo-icon">
@@ -347,7 +378,7 @@
                 
                 <div class="equipe-membro">
                     <div class="equipe-foto">
-                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Membro da equipe">
+                        <img src="assets/img/12.jpg" alt="Membro da equipe">
                     </div>
                     <div class="equipe-conteudo">
                         <div class="equipe-cargo-icon">

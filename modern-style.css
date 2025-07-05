@@ -3,13 +3,24 @@
 :root {
   /* Esquema de cores moderno e atraente */
   --cor-primaria: #FF8C42;
+  --cor-primaria-rgb: 255, 140, 66;
   --cor-secundaria: #34314c;
+  --cor-secundaria-rgb: 52, 49, 76;
   --cor-terciaria: #47B8E0;
+  --cor-terciaria-rgb: 71, 184, 224;
   --cor-fundo-claro: #FAFAFA;
+  --cor-fundo-claro-rgb: 250, 250, 250;
   --cor-texto: #333333;
+  --cor-texto-rgb: 51, 51, 51;
   --cor-texto-claro: #FFFFFF;
   --cor-destaque: #FF5A5F;
   --cor-sucesso: #7FD1AE;
+  
+  /* Variáveis para os banners (aliases) */
+  --color-primary: #FF8C42;
+  --color-primary-rgb: 255, 140, 66;
+  --color-secondary: #47B8E0;
+  --color-secondary-rgb: 71, 184, 224;
   
   /* Variáveis de Tamanhos */
   --spacing-xs: 4px;

@@ -1,27 +1,10 @@
 /* Estilos para a página de contato */
 
-:root {
-    --color-primary: #FF8C42;
-    --color-primary-dark: #f57b29;
-    --color-primary-light: #ffa668;
-    --color-primary-rgb: 255, 140, 66;
-    
-    --color-secondary: #47B8E0;
-    --color-secondary-dark: #34a5cb;
-    --color-secondary-light: #6ac5e6;
-    --color-secondary-rgb: 71, 184, 224;
-    
-    --color-text-dark: #333333;
-    --color-text: #555555;
-    --color-text-light: #777777;
-    
-    --color-bg-light: #f9fafc;
-    --color-border-light: #e0e0e0;
-}
+/* Usando as variáveis globais do arquivo modern-style.css */
 
 .contato-banner {
     position: relative;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-terciaria) 100%);
     background-size: cover;
     background-position: center;
     padding: 100px 0 120px;
@@ -30,7 +13,7 @@
     text-align: center;
     border-radius: 0 0 80px 80px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(var(--color-primary-rgb), 0.2);
+    box-shadow: 0 10px 30px rgba(var(--cor-primaria-rgb), 0.2);
 }
 
 .contato-banner-overlay {
@@ -167,7 +150,7 @@
     left: 0;
     width: 60px;
     height: 3px;
-    background-color: var(--color-primary);
+    background-color: var(--cor-primaria);
     border-radius: 3px;
 }
 
@@ -193,7 +176,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--color-primary-light);
+    background-color: rgba(var(--cor-primaria-rgb), 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,7 +188,7 @@
 
 .contato-item:hover .contato-icon {
     transform: scale(1.1);
-    background-color: var(--color-primary);
+    background-color: var(--cor-primaria);
 }
 
 .contato-item h3 {
@@ -263,8 +246,8 @@
 }
 
 .form-control:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(var(--cor-primaria-rgb), 0.2);
     outline: none;
     background-color: #fff;
 }
@@ -285,10 +268,10 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    background-color: rgba(var(--color-primary-rgb), 0.05);
+    background-color: rgba(var(--cor-primaria-rgb), 0.05);
     padding: 12px 15px;
     border-radius: var(--border-radius-md);
-    border-left: 3px solid var(--color-primary);
+    border-left: 3px solid var(--cor-primaria);
 }
 
 .form-checkbox input {
@@ -305,7 +288,7 @@
 }
 
 .form-checkbox a {
-    color: var(--color-primary);
+    color: var(--cor-primaria);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
@@ -319,13 +302,13 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--color-primary);
+    background-color: var(--cor-primaria);
     transform: scaleX(0);
     transition: transform 0.3s;
 }
 
 .form-checkbox a:hover {
-    color: var(--color-primary-dark);
+    color: #f57b29; /* Um tom mais escuro da cor primária */
 }
 
 .form-checkbox a:hover::after {
@@ -340,7 +323,7 @@
 
 .btn-submit {
     padding: 14px 28px;
-    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
+    background: linear-gradient(45deg, #f57b29, var(--cor-primaria));
     color: white;
     border: none;
     border-radius: var(--border-radius-md);
@@ -352,16 +335,16 @@
     gap: 10px;
     flex: 3;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.3);
+    box-shadow: 0 4px 15px rgba(var(--cor-primaria-rgb), 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 0.95rem;
 }
 
 .btn-submit:hover {
-    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+    background: linear-gradient(45deg, var(--cor-primaria), #f57b29);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(var(--color-primary-rgb), 0.5);
+    box-shadow: 0 8px 25px rgba(var(--cor-primaria-rgb), 0.5);
 }
 
 .btn-reset {

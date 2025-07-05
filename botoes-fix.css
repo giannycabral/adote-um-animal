@@ -1,0 +1,62 @@
+/* Correções de estilo para os botões do banner */
+
+.adocao-hero {
+  position: relative;
+  z-index: 1; /* Certifique-se de que o banner tenha um z-index adequado */
+}
+
+.adocao-hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+.adocao-hero-overlay {
+  z-index: 2;
+}
+
+.banner-shape {
+  z-index: 3;
+}
+
+.hero-buttons {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  position: relative;
+  z-index: 15 !important;
+}
+
+.hero-btn-principal, 
+.hero-btn-secundario {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 20 !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.hero-btn-principal {
+  background-color: #ffffff !important;
+  color: var(--cor-primaria) !important;
+}
+
+.hero-btn-secundario {
+  border: 2px solid white !important;
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}

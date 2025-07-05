@@ -1,0 +1,167 @@
+/* Estilos para a página Sobre */
+
+.sobre-banner {
+    position: relative;
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-terciaria) 100%);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0 120px;
+    margin-bottom: 60px;
+    color: #fff;
+    text-align: center;
+    border-radius: 0 0 80px 80px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(var(--cor-primaria-rgb), 0.2);
+}
+
+.sobre-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0 0 L50 100 L100 0 Z"></path></svg>');
+    background-size: 100% 100%;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.sobre-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-banner-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sobre-pre-titulo {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.sobre-banner-titulo {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.sobre-banner-subtitulo {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out;
+}
+
+.sobre-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.sobre-breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.sobre-breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.sobre-breadcrumb i {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.banner-shape {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="white" fill-opacity="1" d="M0,96L60,106.7C120,117,240,139,360,138.7C480,139,600,117,720,133.3C840,149,960,203,1080,202.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>');
+    background-size: cover;
+    z-index: 2;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .sobre-banner-titulo {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-banner {
+        padding: 60px 0;
+    }
+    
+    .sobre-banner-titulo {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sobre-banner {
+        padding: 40px 0;
+    }
+    
+    .sobre-banner-titulo {
+        font-size: 1.8rem;
+    }
+}

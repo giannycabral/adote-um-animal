@@ -1,0 +1,149 @@
+/* Correções para a linha do tempo da trajetória */
+
+.timeline {
+  position: relative;
+  max-width: 1100px; /* Aumentado para dar ainda mais espaço para as datas */
+  margin: 60px auto 0;
+  padding: 30px 80px; /* Aumentado o padding lateral */
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--cor-primaria), var(--cor-terciaria));
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(var(--cor-primaria-rgb), 0.3);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px; /* Maior espaçamento entre itens */
+  width: 50%;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  max-width: 85%; /* Limita a largura do conteúdo para não se aproximar muito da data */
+}
+
+.timeline-date {
+  position: absolute;
+  top: 15px;
+  width: 140px; /* Maior largura para acomodar os anos */
+  height: 40px; /* Altura fixa */
+  padding: 8px 15px;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-terciaria));
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 5px 15px rgba(var(--cor-primaria-rgb), 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  z-index: 10; /* Garantir que fique acima de outros elementos */
+}
+
+.timeline-date i {
+  font-size: 1rem;
+}
+
+.timeline-date strong {
+  letter-spacing: 1px;
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+  right: -110px; /* Aumentado de -70px para -110px */
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+  left: -110px; /* Aumentado de -70px para -110px */
+}
+
+.timeline-circle {
+  position: absolute;
+  top: 20px;
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border: 4px solid var(--cor-primaria);
+  border-radius: 50%;
+  z-index: 5; /* Aumentado para garantir visibilidade */
+  box-shadow: 0 0 0 5px rgba(var(--cor-primaria-rgb), 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+  font-size: 0.9rem;
+}
+
+.timeline-item:nth-child(odd) .timeline-circle {
+  right: -18px;
+}
+
+.timeline-item:nth-child(even) .timeline-circle {
+  left: -18px;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 992px) {
+  .timeline {
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+  
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding-left: 70px; /* Mais espaço à esquerda para a linha do tempo */
+    padding-right: 15px;
+  }
+  
+  .timeline-content {
+    max-width: 100%;
+  }
+  
+  .timeline-date {
+    left: 80px !important; /* Posição fixa à esquerda */
+    top: -45px !important; /* Acima do conteúdo */
+    width: 120px;
+    right: auto !important;
+  }
+  
+  .timeline-circle {
+    left: 12px !important; /* Posição fixa à esquerda */
+    right: auto !important;
+  }
+  
+  .timeline-item {
+    margin-top: 70px; /* Mais espaço para a data */
+    margin-bottom: 30px;
+  }
+  
+  .timeline-item:first-child {
+    margin-top: 60px; /* Adicionar espaço para o primeiro item também */
+  }
+}
