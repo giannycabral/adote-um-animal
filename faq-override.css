@@ -1,0 +1,32 @@
+/* Correções específicas para o FAQ das páginas */
+
+/* Garantir que os estilos das respostas não sejam sobrescritos */
+.faq-item .faq-resposta {
+  padding: 0 !important;
+  max-height: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease !important;
+}
+
+/* Estado ativo - quando o FAQ está aberto */
+.faq-item.ativo .faq-resposta {
+  padding: 20px 25px !important;
+  max-height: 1000px !important;
+  height: auto !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+/* Estilos específicos para o FAQ da página de galeria */
+.galeria-html .faq-pergunta {
+  position: relative;
+}
+
+.galeria-html .faq-icon {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+}

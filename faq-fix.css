@@ -88,25 +88,27 @@
 }
 
 /* Transformação específica para cada página */
-.galeria-html .faq-item.ativo .faq-icon i.fa-minus {
+/* Na página galeria, usamos ícones de plus/minus */
+.faq-item.ativo .faq-icon i.fa-minus {
     transform: rotate(0);
 }
 
-.galeria-html .faq-item.ativo .faq-icon i.fa-plus {
+.faq-item.ativo .faq-icon i.fa-plus {
     transform: rotate(0);
 }
 
-.contato-html .faq-item.ativo .faq-icon i.fa-chevron-up {
-    transform: rotate(180deg);
-}
-
-/* Para compatibilidade com versões anteriores */
+/* Na página contato, usamos ícones de chevron */
 .faq-item.ativo .faq-icon i.fa-chevron-up {
-    transform: rotate(180deg);
+    transform: rotate(0);
 }
 
 .faq-item.ativo .faq-icon i.fa-chevron-down {
     transform: rotate(180deg);
+}
+
+/* Certifique-se de que todos os ícones tenham a cor correta quando ativos */
+.faq-item.ativo .faq-icon i {
+    color: var(--cor-primaria);
 }
 
 /* Estilos para a resposta */
