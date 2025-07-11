@@ -359,4 +359,52 @@
     .animal-modal-imagem {
         height: 250px;
     }
+    
+    .animal-modal-content {
+        width: 95%;
+        max-height: 85vh;
+        padding: 15px;
+        overflow-y: auto;
+    }
+    
+    .animal-modal-info {
+        padding: 15px 10px;
+    }
+    
+    .animal-modal-badges {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .animal-badge {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+    
+    .animal-modal-titulo {
+        font-size: 1.3rem;
+    }
+    
+    .animal-modal-btn-adotar,
+    .animal-modal-btn-compartilhar {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 375px) {
+    .animal-modal-imagem {
+        height: 180px;
+    }
+    
+    .animal-modal-fechar {
+        top: 5px;
+        right: 5px;
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+    }
 }

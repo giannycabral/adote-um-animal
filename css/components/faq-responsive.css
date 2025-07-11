@@ -1,0 +1,50 @@
+/* Regras responsivas para o FAQ */
+
+@media (max-width: 768px) {
+  .faq-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .faq-pergunta {
+    padding: 1rem;
+  }
+  
+  .faq-pergunta h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .faq-icon {
+    min-width: 22px;
+    height: 22px;
+    width: 22px;
+  }
+  
+  .faq-icon i {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-pergunta h3 {
+    font-size: 0.9rem;
+    max-width: 85%;
+  }
+  
+  .faq-item.ativo .faq-resposta {
+    padding: 15px !important;
+  }
+  
+  .faq-resposta p {
+    font-size: 0.9rem;
+  }
+  
+  .faq-resposta ul {
+    padding-left: 1rem;
+  }
+  
+  .faq-resposta ul li {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,112 @@
+/* Melhorias de responsividade para toda a página */
+
+/* Dispositivos Extra pequenos (até 375px) */
+@media (max-width: 375px) {
+  .section-titulo {
+    font-size: 1.6rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* Ajustes para estatísticas */
+  .estatisticas-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .estatisticas-item {
+    padding: 15px !important;
+  }
+  
+  /* Ajustes para botões */
+  .btn {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Ajuste para o rodapé */
+  .footer-grid {
+    gap: 2rem !important;
+  }
+  
+  .footer-titulo {
+    margin-bottom: 1rem !important;
+  }
+  
+  .footer-contato li {
+    margin-bottom: 0.8rem !important;
+  }
+  
+  /* Ajustes para a navegação */
+  .logo {
+    font-size: 1.3rem !important;
+  }
+  
+  /* Ajustes para tabelas e listas */
+  table {
+    font-size: 0.9rem !important;
+  }
+  
+  ul, ol {
+    padding-left: 1rem !important;
+  }
+}
+
+/* Melhorias gerais para dispositivos móveis (até 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px !important;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  /* Padding padrão para seções em telas pequenas */
+  section {
+    padding: 40px 0 !important;
+  }
+  
+  /* Espaçamento de imagens */
+  img {
+    margin-bottom: 15px !important;
+  }
+}
+
+/* Garantir espaçamento adequado para todas as seções */
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0 !important;
+  }
+  
+  /* Melhorar interação em dispositivos móveis */
+  button, 
+  .btn, 
+  a.btn, 
+  input[type="submit"],
+  .faq-pergunta,
+  .mobile-menu,
+  .filtro-btn-aplicar {
+    min-height: 44px !important; /* Tamanho mínimo para boa interação em touch */
+  }
+  
+  /* Espaçamento entre elementos interativos */
+  .filtro-checkbox,
+  .filtro-tag,
+  .nav-links li,
+  .galeria-item,
+  .form-group {
+    margin-bottom: 15px !important;
+  }
+}

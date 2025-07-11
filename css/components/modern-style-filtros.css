@@ -736,4 +736,55 @@
     font-size: 14px;
     padding: 12px 45px;
   }
+  
+  .filtro-btn-aplicar,
+  .filtro-btn-limpar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .filtro-acoes {
+    flex-direction: column;
+  }
+  
+  .galeria-filtros-toggle {
+    margin-bottom: 15px;
+  }
+  
+  .filtros-toggle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .filtro-tag {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Para dispositivos muito pequenos */
+@media (max-width: 375px) {
+  .galeria-busca-input {
+    padding: 10px 40px;
+    font-size: 13px;
+  }
+  
+  .galeria-busca-icon {
+    left: 15px;
+    font-size: 16px;
+  }
+  
+  .filtro-titulo {
+    font-size: 14px;
+  }
+  
+  .galeria-paginacao {
+    gap: 5px;
+  }
+  
+  .paginacao-numero {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
 }
