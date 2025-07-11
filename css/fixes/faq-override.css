@@ -8,6 +8,7 @@
   opacity: 0 !important;
   overflow: hidden !important;
   transition: all 0.4s ease !important;
+  display: block !important;
 }
 
 /* Estado ativo - quando o FAQ está aberto */
@@ -17,6 +18,21 @@
   height: auto !important;
   opacity: 1 !important;
   overflow: visible !important;
+  display: block !important;
+}
+
+/* Certifique-se de que os ícones apareçam corretamente */
+.faq-icon i {
+  display: inline-block !important;
+  transition: transform 0.3s !important;
+}
+
+/* Garantir que os cliques funcionem */
+.faq-pergunta {
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  position: relative;
 }
 
 /* Estilos específicos para o FAQ da página de galeria */
@@ -29,4 +45,21 @@
   right: 25px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Forçar exibição de conteúdo */
+.faq-pergunta h3 {
+  margin: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Debugging visual para entender estados */
+.faq-item.ativo {
+  border-color: var(--cor-primaria, #ff6b00) !important;
+}
+
+/* Certifique-se que o elemento .faq-item não está invisível */
+.faq-item {
+  visibility: visible !important;
+  display: block !important;
 }

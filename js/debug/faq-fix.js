@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Seleciona todos os itens de FAQ
         const faqItems = document.querySelectorAll('.faq-item');
         console.log(`Total de itens FAQ encontrados: ${faqItems.length}`);
+        console.log(`Estamos na página da galeria: ${Boolean(document.querySelector('.galeria-html'))}`);
         
         if (!faqItems.length) return;
         
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const icone = pergunta.querySelector('.faq-icon i') || pergunta.querySelector('i');
             if (icone) {
                 // Verifica se estamos na página de galeria ou contato
-                if (window.location.pathname.includes('galeria')) {
+                if (document.querySelector('.galeria-html') || window.location.pathname.includes('galeria')) {
                     icone.className = 'fas fa-plus';
                 } else {
                     icone.className = 'fas fa-chevron-down';
@@ -30,9 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Adicionar evento de clique direto
-            pergunta.onclick = function() {
+            pergunta.onclick = function(e) {
+                e.preventDefault();
+                console.log('Pergunta clicada:', this.querySelector('h3').textContent);
+                
                 // Verifica se o item está aberto
                 const estaAberto = item.classList.contains('ativo');
+                console.log('Estado do item antes do clique:', estaAberto ? 'aberto' : 'fechado');
                 
                 // Fecha todos os itens primeiro
                 document.querySelectorAll('.faq-item').forEach(outroItem => {
@@ -42,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const outroIcone = outroItem.querySelector('.faq-pergunta .faq-icon i') || 
                                        outroItem.querySelector('.faq-pergunta i');
                     if (outroIcone) {
-                        if (window.location.pathname.includes('galeria')) {
+                        if (document.querySelector('.galeria-html') || window.location.pathname.includes('galeria')) {
                             outroIcone.className = 'fas fa-plus';
                         } else {
                             outroIcone.className = 'fas fa-chevron-down';
@@ -53,10 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Se este item não estava aberto, abre-o
                 if (!estaAberto) {
                     item.classList.add('ativo');
+                    console.log('Item agora está aberto');
                     
                     // Atualiza o ícone para o estado aberto
                     if (icone) {
-                        if (window.location.pathname.includes('galeria')) {
+                        if (document.querySelector('.galeria-html') || window.location.pathname.includes('galeria')) {
                             icone.className = 'fas fa-minus';
                         } else {
                             icone.className = 'fas fa-chevron-up';
