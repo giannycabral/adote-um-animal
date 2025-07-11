@@ -1,0 +1,89 @@
+/* Estilos para o componente FAQ */
+
+.faq-container {
+  margin: 2rem 0;
+  max-width: 800px;
+  width: 100%;
+}
+
+.faq-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-pergunta {
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.faq-pergunta:hover {
+  background-color: #f9f9f9;
+}
+
+.faq-pergunta h3 {
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.faq-icon {
+  background-color: var(--cor-primaria, #ff6b00);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.ativo .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-resposta {
+  height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.faq-item.ativo .faq-resposta {
+  height: auto;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.faq-resposta p {
+  color: #555;
+  margin-top: 0;
+}
+
+.faq-resposta ul {
+  color: #555;
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.faq-resposta ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo específico para ícones na galeria */
+.galeria-section .faq-icon i {
+  margin: 0;
+}
+
+/* Estilo específico para ícones na página de contato */
+.contato-section .faq-icon i {
+  margin: 0;
+}

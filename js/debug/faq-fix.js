@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const icone = pergunta.querySelector('.faq-icon i') || pergunta.querySelector('i');
             if (icone) {
                 // Verifica se estamos na página de galeria ou contato
-                if (document.querySelector('.galeria-html')) {
+                if (window.location.pathname.includes('galeria')) {
                     icone.className = 'fas fa-plus';
                 } else {
                     icone.className = 'fas fa-chevron-down';
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const outroIcone = outroItem.querySelector('.faq-pergunta .faq-icon i') || 
                                        outroItem.querySelector('.faq-pergunta i');
                     if (outroIcone) {
-                        if (document.querySelector('.galeria-html')) {
+                        if (window.location.pathname.includes('galeria')) {
                             outroIcone.className = 'fas fa-plus';
                         } else {
                             outroIcone.className = 'fas fa-chevron-down';
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Atualiza o ícone para o estado aberto
                     if (icone) {
-                        if (document.querySelector('.galeria-html')) {
+                        if (window.location.pathname.includes('galeria')) {
                             icone.className = 'fas fa-minus';
                         } else {
                             icone.className = 'fas fa-chevron-up';
