@@ -1,0 +1,163 @@
+/* 
+ * Ajustes de responsividade para a seção "Nossa Localização" da página de contato
+ * Este arquivo melhora a experiência em dispositivos móveis para o mapa e cards de informação
+ */
+
+/* Ajustes gerais para a seção */
+.mapa-section {
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.mapa-header {
+    margin-bottom: 3rem;
+}
+
+/* Media queries para tablets */
+@media (max-width: 992px) {
+    .mapa-grid-container {
+        gap: 1.5rem;
+    }
+    
+    .mapa-info-card {
+        padding: 1.2rem;
+    }
+}
+
+/* Media queries para dispositivos móveis maiores */
+@media (max-width: 768px) {
+    .mapa-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .mapa-grid-map {
+        grid-row: 1;
+        min-height: 350px;
+    }
+    
+    .mapa-grid-cards {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .mapa-info-card {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mapa-info-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .mapa-cta {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .mapa-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+    
+    .mapa-header {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Media queries para dispositivos móveis menores */
+@media (max-width: 576px) {
+    .mapa-section {
+        padding: 3rem 0;
+    }
+    
+    .mapa-grid-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .mapa-info-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .mapa-info-icon {
+        margin-bottom: 0;
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+    }
+    
+    .mapa-info-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .mapa-info-content h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .mapa-info-content p,
+    .mapa-info-content ul {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .mapa-info-content ul.mapa-horarios li,
+    .mapa-info-content ul.mapa-observacoes li {
+        margin-bottom: 0.25rem;
+    }
+    
+    .mapa-grid-map {
+        min-height: 250px;
+    }
+    
+    .mapa-titulo {
+        font-size: 1.6rem;
+    }
+    
+    .mapa-subtitulo {
+        font-size: 0.95rem;
+    }
+    
+    /* Ajuste específico para os botões CTA */
+    .mapa-cta {
+        margin-top: 1.5rem;
+    }
+    
+    .mapa-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Media queries para dispositivos muito pequenos */
+@media (max-width: 360px) {
+    .mapa-info-card {
+        padding: 0.8rem;
+    }
+    
+    .mapa-info-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+    
+    .mapa-info-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .mapa-info-content p,
+    .mapa-info-content ul {
+        font-size: 0.85rem;
+    }
+    
+    .mapa-grid-map {
+        min-height: 200px;
+    }
+}

@@ -1,0 +1,15 @@
+/* 
+* Correção para barra de busca em dispositivos móveis
+* Este arquivo oculta a barra de busca global em dispositivos móveis nas páginas internas
+*/
+
+@media (max-width: 768px) {
+    .busca-container {
+        display: none;
+    }
+    
+    /* Na página inicial, a busca deve continuar visível */
+    .pagina-inicial .busca-container {
+        display: block;
+    }
+}

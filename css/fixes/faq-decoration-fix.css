@@ -1,0 +1,24 @@
+/* 
+ * Correção para o problema de quadrados transparentes na seção FAQ
+ * Este arquivo remove os elementos decorativos :before e :after que estão causando problemas visuais
+ */
+
+/* Remove os elementos decorativos que estão causando problemas */
+.faq-section:before,
+.faq-section:after {
+    display: none !important;
+}
+
+/* Mantém apenas o gradiente na parte superior da seção FAQ */
+.faq-section::before {
+    display: block !important;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-terciaria));
+    width: 100%; /* Garantir que cubra toda a largura */
+    opacity: 1;
+}

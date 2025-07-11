@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="css/components/faq-style.css">
     <link rel="stylesheet" href="css/components/faq-responsive.css">
     <link rel="stylesheet" href="css/fixes/responsive-fixes.css">
+    <link rel="stylesheet" href="css/components/enhanced-sections.css">
+    <link rel="stylesheet" href="css/fixes/busca-fix.css">
+    <link rel="stylesheet" href="css/fixes/mapa-responsive-fix.css">
+    <link rel="stylesheet" href="css/fixes/faq-decoration-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Contato - Pet Love</title>
 </head>
@@ -193,60 +197,62 @@
                 <p class="mapa-subtitulo">Venha nos visitar e conhecer pessoalmente nossos animais disponíveis para adoção</p>
             </div>
             
-            <div class="mapa-wrapper">
-                <!-- Mapa completo em tela cheia -->
-                <div class="mapa-fullview">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098097094649!2d-46.65390548440848!3d-23.56507176760351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647889142591!5m2!1spt-BR!2sbr" style="border:0; border-radius: var(--border-radius-md);" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-            
-            <div class="mapa-info-container">
-                <div class="mapa-info-card">
-                    <div class="mapa-info-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <div class="mapa-info-content">
-                        <h3>Endereço</h3>
-                        <p>Av. Principal, 123, Bela Vista<br>São Paulo - SP, 01310-000</p>
+            <div class="mapa-grid-container">
+                <div class="mapa-grid-map">
+                    <!-- Mapa completo -->
+                    <div class="mapa-fullview">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098097094649!2d-46.65390548440848!3d-23.56507176760351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1647889142591!5m2!1spt-BR!2sbr" style="border:0; border-radius: var(--border-radius-md);" allowfullscreen="" loading="lazy" title="Mapa de localização da Pet Love"></iframe>
                     </div>
                 </div>
                 
-                <div class="mapa-info-card">
-                    <div class="mapa-info-icon">
-                        <i class="fas fa-bus"></i>
+                <div class="mapa-grid-cards">
+                    <div class="mapa-info-card">
+                        <div class="mapa-info-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="mapa-info-content">
+                            <h3>Endereço</h3>
+                            <p>Av. Principal, 123, Bela Vista<br>São Paulo - SP, 01310-000</p>
+                        </div>
                     </div>
-                    <div class="mapa-info-content">
-                        <h3>Como Chegar</h3>
-                        <p><strong>Metrô:</strong> Estação Paulista (Linha Verde)<br>
-                        <strong>Ônibus:</strong> Linhas 807A, 875A, 917M</p>
+                    
+                    <div class="mapa-info-card">
+                        <div class="mapa-info-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="mapa-info-content">
+                            <h3>Como Chegar</h3>
+                            <p><strong>Metrô:</strong> Estação Paulista (Linha Verde)<br>
+                            <strong>Ônibus:</strong> Linhas 807A, 875A, 917M</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="mapa-info-card">
-                    <div class="mapa-info-icon">
-                        <i class="fas fa-clock"></i>
+                    
+                    <div class="mapa-info-card">
+                        <div class="mapa-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="mapa-info-content">
+                            <h3>Horário de Visitas</h3>
+                            <ul class="mapa-horarios">
+                                <li><span>Segunda a Sexta:</span> 09h às 18h</li>
+                                <li><span>Sábados:</span> 10h às 15h</li>
+                                <li><span>Domingos e Feriados:</span> Fechado</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mapa-info-content">
-                        <h3>Horário de Visitas</h3>
-                        <ul class="mapa-horarios">
-                            <li><span>Segunda a Sexta:</span> 09h às 18h</li>
-                            <li><span>Sábados:</span> 10h às 15h</li>
-                            <li><span>Domingos e Feriados:</span> Fechado</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mapa-info-card">
-                    <div class="mapa-info-icon">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-                    <div class="mapa-info-content">
-                        <h3>Observações</h3>
-                        <ul class="mapa-observacoes">
-                            <li>Estacionamento gratuito para visitantes</li>
-                            <li>Traga um documento com foto para visitar os animais</li>
-                            <li>Agendamento prévio para adoções</li>
-                        </ul>
+                    
+                    <div class="mapa-info-card">
+                        <div class="mapa-info-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="mapa-info-content">
+                            <h3>Observações</h3>
+                            <ul class="mapa-observacoes">
+                                <li>Estacionamento gratuito para visitantes</li>
+                                <li>Traga um documento com foto para visitar os animais</li>
+                                <li>Agendamento prévio para adoções</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -344,6 +350,15 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="faq-mais-ajuda">
+                <h3>Ainda tem dúvidas?</h3>
+                <p>Entre em contato conosco através do formulário acima ou pelos nossos canais de comunicação.</p>
+                <div class="faq-mais-ajuda-botoes">
+                    <a href="#contato-form" class="faq-botao-contato"><i class="fas fa-envelope"></i> Enviar mensagem</a>
+                    <a href="tel:+551199999999" class="faq-botao-telefone"><i class="fas fa-phone"></i> (11) 9999-9999</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -418,8 +433,7 @@
     <script src="js/modules/main.js"></script>
     <script src="js/components/busca.js"></script>
     <script src="js/components/form.js"></script>
-    <script src="js/components/faq.js"></script>
-    <script src="js/debug/faq-fix.js"></script>
+    <script src="js/components/faq-enhanced.js"></script>
 </body>
 
 </html>

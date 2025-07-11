@@ -1,0 +1,615 @@
+/* Enhanced Styles for Contact Page Sections */
+
+/* ===== LOCALIZAÇÃO SECTION ===== */
+.mapa-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.mapa-grid-map {
+    grid-row: 1 / span 2;
+    height: 100%;
+    min-height: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.mapa-grid-map::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-terciaria));
+    z-index: 1;
+}
+
+.mapa-grid-cards {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.mapa-fullview {
+    width: 100%;
+    height: 100%;
+}
+
+.mapa-fullview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.mapa-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mapa-titulo {
+    font-size: 2.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.mapa-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    border-radius: 2px;
+}
+
+.mapa-subtitulo {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+.local-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.local-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: calc(50% - 1rem);
+    min-width: 300px;
+}
+
+.local-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor-primaria);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(255, 127, 0, 0.3);
+}
+
+.local-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.local-text {
+    flex-grow: 1;
+}
+
+.local-text h4 {
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 0.5rem;
+}
+
+.local-text p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.local-text a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.local-text a:hover {
+    color: var(--cor-terciaria);
+    text-decoration: underline;
+}
+
+.mapa-info-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mapa-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.mapa-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--cor-primaria);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.mapa-info-card:hover::before {
+    opacity: 1;
+}
+
+.mapa-info-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: rgba(255, 127, 0, 0.1);
+    color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.mapa-info-card:hover .mapa-info-icon {
+    background-color: var(--cor-primaria);
+    color: white;
+    transform: scale(1.1);
+}
+
+.mapa-info-content {
+    flex-grow: 1;
+}
+
+.mapa-info-content h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.mapa-info-content p {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.mapa-info-content strong {
+    color: var(--cor-secundaria);
+}
+
+.mapa-horarios,
+.mapa-observacoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mapa-horarios li,
+.mapa-observacoes li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.mapa-horarios li::before,
+.mapa-observacoes li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--cor-primaria);
+}
+
+.mapa-horarios li span {
+    font-weight: 500;
+    color: var(--cor-secundaria);
+}
+
+.mapa-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.mapa-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid var(--cor-primaria);
+}
+
+.mapa-btn-outline {
+    background-color: transparent;
+    color: var(--cor-secundaria);
+}
+
+.mapa-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 127, 0, 0.2);
+}
+
+.mapa-action-btn:hover {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 127, 0, 0.3);
+}
+
+.mapa-action-btn i {
+    font-size: 1.2rem;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    padding: 4rem 0;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.faq-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-terciaria));
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.faq-titulo {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.faq-titulo::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(/assets/img/coracao.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -50px;
+    top: -10px;
+    opacity: 0.6;
+}
+
+.faq-titulo::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(/assets/img/coracao.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -50px;
+    top: -10px;
+    opacity: 0.6;
+    transform: scaleX(-1);
+}
+
+.faq-subtitulo {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.faq-pergunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-pergunta::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--cor-primaria);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.faq-item:hover .faq-pergunta::before {
+    opacity: 1;
+}
+
+.faq-pergunta h3 {
+    font-size: 1.2rem;
+    color: var(--cor-secundaria);
+    margin: 0;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.faq-item:hover .faq-pergunta h3 {
+    color: var(--cor-primaria);
+}
+
+.faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 127, 0, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.faq-item:hover .faq-icon {
+    background-color: var(--cor-primaria);
+}
+
+.faq-icon i {
+    color: var(--cor-primaria);
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.faq-item:hover .faq-icon i {
+    color: #fff;
+}
+
+.faq-resposta {
+    background-color: #fff;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.faq-item.active .faq-resposta {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-icon {
+    background-color: var(--cor-primaria);
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-icon i {
+    color: white;
+}
+
+.faq-resposta p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.faq-resposta ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-resposta ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 0.5rem;
+    color: #555;
+}
+
+.faq-resposta ul li::before {
+    content: "•";
+    color: var(--cor-primaria);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Seção adicional de ajuda após o FAQ */
+.faq-mais-ajuda {
+    background: linear-gradient(135deg, #fff8f0, #fff);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(255, 127, 0, 0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.faq-mais-ajuda::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(/assets/img/coracao.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -15px;
+    top: -15px;
+    opacity: 0.1;
+}
+
+.faq-mais-ajuda h3 {
+    color: var(--cor-primaria);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.faq-mais-ajuda p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.faq-mais-ajuda-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.faq-botao-contato,
+.faq-botao-telefone {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.faq-botao-contato {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.faq-botao-telefone {
+    background-color: #fff;
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-primaria);
+}
+
+.faq-botao-contato:hover {
+    background-color: #ff6b00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 107, 0, 0.2);
+}
+
+.faq-botao-telefone:hover {
+    background-color: rgba(255, 127, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .local-item {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .faq-titulo::before,
+    .faq-titulo::after {
+        display: none;
+    }
+
+    .faq-pergunta h3 {
+        font-size: 1.1rem;
+    }
+
+    .faq-mais-ajuda-botoes {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .mapa-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .mapa-iframe {
+        height: 350px;
+    }
+    
+    .mapa-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .local-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .local-icon i {
+        font-size: 1.2rem;
+    }
+}

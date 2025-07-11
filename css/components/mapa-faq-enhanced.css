@@ -1,0 +1,448 @@
+/* Melhorias para as seções de Mapa/Localização e FAQ da página de contato */
+
+/* ===== Melhorias para seção Nossa Localização ===== */
+.mapa-section {
+  background: linear-gradient(135deg, #f5f8ff 0%, #e9f0ff 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Elementos decorativos */
+.mapa-section:before,
+.mapa-section:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.mapa-section:before {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--cor-primaria-rgb, 255, 107, 0), 0.1) 0%, rgba(var(--cor-primaria-rgb, 255, 107, 0), 0) 70%);
+  top: -150px;
+  right: -150px;
+}
+
+.mapa-section:after {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--cor-terciaria-rgb, 0, 123, 255), 0.1) 0%, rgba(var(--cor-terciaria-rgb, 0, 123, 255), 0) 70%);
+  bottom: -100px;
+  left: -100px;
+}
+
+/* Estilo do título principal */
+.mapa-titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.mapa-titulo:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-primaria, #ff6b00), var(--cor-terciaria, #007bff));
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+/* Estilo do subtítulo */
+.mapa-subtitulo {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Estilo do mapa */
+.mapa-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: 10px solid #fff;
+  margin-bottom: 50px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.mapa-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Estilo dos cards de informação */
+.mapa-info-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.mapa-info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid transparent;
+}
+
+.mapa-info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  border-bottom-color: var(--cor-primaria, #ff6b00);
+}
+
+.mapa-info-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 0 0 0 100%;
+  transition: all 0.4s ease;
+}
+
+.mapa-info-card:hover:before {
+  width: 150px;
+  height: 150px;
+}
+
+/* Ícones estilizados */
+.mapa-info-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cor-primaria, #ff6b00), var(--cor-secundaria, #222));
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+.mapa-info-card:hover .mapa-info-icon {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Conteúdo do card */
+.mapa-info-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+  position: relative;
+}
+
+.mapa-info-content p,
+.mapa-info-content ul {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Lista de horários */
+.mapa-horarios {
+  margin-top: 10px;
+}
+
+.mapa-horarios li {
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mapa-horarios li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mapa-horarios li span {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Lista de observações */
+.mapa-observacoes li {
+  padding-left: 28px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.mapa-observacoes li:before {
+  content: '✓';
+  color: var(--cor-primaria, #ff6b00);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Botões de ação */
+.mapa-cta {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.mapa-btn {
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.mapa-btn:first-child {
+  background: linear-gradient(45deg, var(--cor-primaria, #ff6b00), var(--cor-terciaria, #007bff));
+  border: none;
+  color: white;
+  box-shadow: 0 10px 20px rgba(var(--cor-primaria-rgb, 255, 107, 0), 0.3);
+}
+
+.mapa-btn:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(var(--cor-primaria-rgb, 255, 107, 0), 0.4);
+}
+
+/* ===== Melhorias para seção FAQ ===== */
+.faq-section {
+  background: linear-gradient(135deg, #fff 0%, #f5f8ff 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elementos decorativos */
+.faq-section:before,
+.faq-section:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.faq-section:before {
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23e0e8ff' stroke-width='2'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.faq-section:after {
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='80' height='80' rx='10' fill='none' stroke='%23e0e8ff' stroke-width='2'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* Cabeçalho do FAQ */
+.faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.faq-titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #333;
+  position: relative;
+}
+
+.faq-titulo:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-primaria, #ff6b00), var(--cor-terciaria, #007bff));
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.faq-subtitulo {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Container do FAQ */
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Itens do FAQ */
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: all 0.4s ease;
+  border-left: 4px solid transparent;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.faq-item.ativo {
+  border-left: 4px solid var(--cor-primaria, #ff6b00);
+  box-shadow: 0 15px 35px rgba(var(--cor-primaria-rgb, 255, 107, 0), 0.1);
+}
+
+/* Perguntas do FAQ */
+.faq-pergunta {
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-pergunta h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.faq-item.ativo .faq-pergunta h3 {
+  color: var(--cor-primaria, #ff6b00);
+}
+
+/* Ícone do FAQ */
+.faq-icon {
+  background: #f0f0f0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.faq-item.ativo .faq-icon {
+  background: var(--cor-primaria, #ff6b00);
+  color: white;
+  transform: rotate(180deg);
+}
+
+/* Respostas do FAQ */
+.faq-resposta {
+  padding: 0 30px;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-item.ativo .faq-resposta {
+  padding: 0 30px 25px;
+  height: auto;
+}
+
+.faq-resposta p {
+  color: #555;
+  line-height: 1.8;
+  margin-top: 0;
+}
+
+.faq-resposta ul {
+  color: #555;
+  padding-left: 20px;
+}
+
+.faq-resposta ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .mapa-titulo,
+  .faq-titulo {
+    font-size: 2.2rem;
+  }
+  
+  .mapa-subtitulo,
+  .faq-subtitulo {
+    font-size: 1.1rem;
+  }
+  
+  .mapa-info-card {
+    padding: 20px;
+  }
+  
+  .mapa-info-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .mapa-btn {
+    padding: 12px 25px;
+  }
+  
+  .faq-pergunta {
+    padding: 20px;
+  }
+  
+  .faq-pergunta h3 {
+    font-size: 1.1rem;
+  }
+  
+  .faq-item.ativo .faq-resposta {
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mapa-titulo,
+  .faq-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .mapa-cta {
+    flex-direction: column;
+  }
+  
+  .mapa-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
