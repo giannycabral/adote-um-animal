@@ -1,12 +1,84 @@
 # 🐾 Pet Love - Site de Adoção de Animais
 
-Um site moderno e responsivo para uma ONG de adoção de animais, com foco em proporcionar uma experiência amigável e atraente para os usuários que desejam adotar ou ajudar animais abandonados.
-
 ![Pet Love Screenshot](/assets/img/petlove.jpg)
 
 ## 📋 Descrição
 
 O Pet Love é um projeto desenvolvido para uma ONG fictícia de adoção de animais. O site possui uma interface moderna e atraente, com foco na experiência do usuário e na facilitação do processo de adoção de animais abandonados.
+
+## 📂 Estrutura do Projeto
+
+```
+adote-um-animal/
+├── assets/            # Recursos estáticos como imagens
+│   └── img/           # Imagens do site
+├── css/               # Todos os arquivos de estilo
+│   ├── base/          # Estilos básicos e globais
+│   ├── components/    # Estilos de componentes reutilizáveis
+│   ├── fixes/         # Correções e ajustes específicos
+│   └── pages/         # Estilos específicos de páginas
+├── js/                # Scripts JavaScript
+│   ├── components/    # Componentes JavaScript
+│   ├── debug/         # Scripts para depuração
+│   ├── modules/       # Módulos JavaScript principais
+│   └── utils/         # Utilitários JavaScript
+└── *.html             # Arquivos HTML do site
+```
+
+### 📄 Páginas Principais
+
+- `index.html` - Página inicial
+- `sobre.html` - Página sobre a organização
+- `galeria.html` - Página de adoção com os animais disponíveis
+- `contato.html` - Página de contato
+
+### 🎨 Estilos CSS
+
+#### 📁 css/base/
+- `modern-style.css` - Estilos base do site incluindo variáveis, reset e elementos comuns
+
+#### 📁 css/components/
+- `enhanced-sections.css` - Estilos aprimorados para seções específicas
+- `faq-style.css` - Estilos para o componente FAQ
+- `faq-responsive.css` - Ajustes responsivos para o FAQ
+- `mapa-faq-enhanced.css` - Estilos aprimorados para o mapa e FAQ
+- `modern-style-busca.css` - Estilos para o componente de busca
+- `modern-style-filtros.css` - Estilos para os filtros de busca
+- `modern-style-modais.css` - Estilos para modais
+
+#### 📁 css/fixes/
+- `botoes-fix.css` - Correções para botões
+- `busca-fix.css` - Correções para o componente de busca
+- `faq-decoration-fix.css` - Correções para decorações do FAQ
+- `faq-fix.css` - Correções gerais para o FAQ
+- `faq-override.css` - Sobrescrições para o FAQ
+- `mapa-responsive-fix.css` - Correções para responsividade do mapa
+- `responsive-fixes.css` - Correções gerais de responsividade
+- `timeline-fix.css` - Correções para a timeline
+
+#### 📁 css/pages/
+- `modern-style-adocao.css` - Estilos para a página de adoção
+- `modern-style-contato.css` - Estilos para a página de contato
+- `modern-style-sobre.css` - Estilos para a página sobre
+
+### 📜 JavaScript
+
+#### 📁 js/components/
+- `busca.js` - Funcionalidade de busca
+- `detalhes-animal.js` - Modal de detalhes de animais
+- `faq-enhanced.js` - Versão aprimorada do componente FAQ
+- `faq.js` - Componente de perguntas frequentes
+- `filtros.js` - Filtros de busca de animais
+- `form.js` - Validação e envio de formulários
+
+#### 📁 js/debug/
+- `faq-debug.js` - Scripts de depuração para o FAQ
+- `faq-fix.js` - Correções para o FAQ
+- `galeria-faq-fix.js` - Correções para o FAQ na galeria
+- `teste-faq.js` - Testes para o componente FAQ
+
+#### 📁 js/modules/
+- `main.js` - Script principal do site
 
 ## ✨ Funcionalidades
 
@@ -17,20 +89,18 @@ O Pet Love é um projeto desenvolvido para uma ONG fictícia de adoção de anim
 - **Animações Modernas:** Efeitos visuais que tornam a navegação mais agradável
 - **Informações da ONG:** Seção sobre a história, missão, visão e valores da organização
 - **Equipe:** Apresentação dos membros da equipe
+- **FAQ Interativo:** Seção de perguntas frequentes com animações e transições suaves
+- **Sistema de Busca:** Busca global por todo o conteúdo do site
+- **Mapa de Localização:** Integração com mapas para encontrar a sede da ONG
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5:** Estruturação do conteúdo
 - **CSS3:** Estilização moderna com variáveis CSS e flexbox/grid
 - **JavaScript:** Interatividade e animações
-- **Font Awesome:** Ícones modernos e responsivos
+- **Font Awesome 6.4.0:** Ícones modernos e responsivos
 
-## 📱 Páginas
 
-1. **Home (index.html):** Página principal com chamada para ação e estatísticas
-2. **Sobre (sobre.html):** História e valores da ONG, apresentação da equipe
-3. **Adoção (galeria.html):** Galeria de animais disponíveis para adoção
-4. **Contato (contato.html):** Formulário de contato e informações de localização
 
 ## 🚀 Como Executar
 
@@ -48,6 +118,15 @@ cd adote-um-animal
 ```bash
 open index.html
 ```
+
+## 🌟 Melhorias Implementadas
+
+- **Organização do Código:** Estrutura de pastas clara e organizada
+- **Componente FAQ Aprimorado:** Animações e interatividade melhoradas
+- **Responsividade Avançada:** Otimização para todos os dispositivos
+- **Correções Visuais:** Remoção de elementos decorativos problemáticos
+- **Barra de Busca:** Ocultação automática em dispositivos móveis
+- **Acessibilidade:** Melhorias para leitores de tela e navegação por teclado
 
 ## 🌟 Melhorias Futuras
 
