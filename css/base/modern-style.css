@@ -336,7 +336,7 @@ img {
   position: relative;
   height: 40vh;
   min-height: 300px;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('assets/img/petlove.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../../assets/img/petlove.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

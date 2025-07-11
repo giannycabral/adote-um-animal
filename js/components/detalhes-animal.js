@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const animaisDetalhes = {
         'luna-sol': {
             nome: 'Luna e Sol',
-            imagem: 'assets/img/foto1.jpg',
+            imagem: '../../assets/img/foto1.jpg',
             idade: '2 meses',
             genero: 'Fêmeas',
             tipo: 'Gatos',
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'thor': {
             nome: 'Thor',
-            imagem: 'assets/img/foto2.jpg',
+            imagem: '../../assets/img/foto2.jpg',
             idade: '1 ano',
             genero: 'Macho',
             tipo: 'Cachorro',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'simba': {
             nome: 'Simba',
-            imagem: 'assets/img/foto3.jpg',
+            imagem: '../../assets/img/foto3.jpg',
             idade: '6 meses',
             genero: 'Macho',
             tipo: 'Gato',
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'irmaos': {
             nome: 'Irmãos Travessos',
-            imagem: 'assets/img/foto4.jpg',
+            imagem: '../../assets/img/foto4.jpg',
             idade: '4 meses',
             genero: 'Machos',
             tipo: 'Cachorros',
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'coelhos': {
             nome: 'Cenoura e Alfafa',
-            imagem: 'assets/img/foto5.jpg',
+            imagem: '../../assets/img/foto5.jpg',
             idade: '1 ano',
             genero: 'Casal',
             tipo: 'Coelhos',
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'quarteto': {
             nome: 'Quarteto Fantástico',
-            imagem: 'assets/img/foto6.jpg',
+            imagem: '../../assets/img/foto6.jpg',
             idade: '2 meses',
             genero: 'Mistos',
             tipo: 'Gatos',
