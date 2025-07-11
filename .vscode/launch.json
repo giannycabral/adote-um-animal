@@ -8,8 +8,32 @@
             "type": "chrome",
             "request": "launch",
             "name": "Iniciar o Chrome em relação a localhost",
-            "url": "http://localhost:8080",
+            "url": "http://localhost:5500",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Abrir index.html",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Abrir contato.html",
+            "file": "${workspaceFolder}/contato.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Abrir galeria.html",
+            "file": "${workspaceFolder}/galeria.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Abrir sobre.html",
+            "file": "${workspaceFolder}/sobre.html"
         }
     ]
 }

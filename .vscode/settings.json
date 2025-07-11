@@ -2,6 +2,33 @@
     "cSpell.words": [
         "botoes",
         "texto",
-        "titulo"
-    ]
+        "titulo",
+        "adocao",
+        "adote",
+        "petlove",
+        "galeria"
+    ],
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "editor.rulers": [
+        100
+    ],
+    "files.eol": "\n",
+    "html.format.wrapAttributes": "auto",
+    "html.format.wrapLineLength": 100,
+    "css.validate": true,
+    "javascript.format.enable": true,
+    "javascript.validate.enable": true,
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#FF8C00",
+        "activityBar.foreground": "#FFFFFF",
+        "titleBar.activeBackground": "#FF8C00",
+        "titleBar.activeForeground": "#FFFFFF",
+        "statusBar.background": "#FF8C00",
+        "statusBar.foreground": "#FFFFFF"
+    }
 }

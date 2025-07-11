@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Iniciar Live Server",
+      "type": "shell",
+      "command": "npx live-server",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Abrir no navegador padrão",
+      "type": "shell",
+      "command": "xdg-open ${workspaceFolder}/index.html || open ${workspaceFolder}/index.html || start ${workspaceFolder}/index.html",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "Validar HTML",
+      "type": "shell",
+      "command": "npx html-validate ${workspaceFolder}/*.html",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Verificar links",
+      "type": "shell",
+      "command": "npx broken-link-checker http://localhost:5500 -ro",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}
